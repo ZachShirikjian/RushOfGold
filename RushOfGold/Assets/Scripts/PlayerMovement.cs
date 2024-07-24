@@ -13,11 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed = 5f;
     public float JumpPower;
     private Vector2 p1x, p2x;
+    private bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isGrounded = false;
     }
 
     // Update is called once per frame
@@ -54,23 +55,44 @@ public class PlayerMovement : MonoBehaviour
         //Jump and Attack controls for Player 1
         if (Input.GetKeyDown(KeyCode.W))
         {
-
+            if (isGrounded)
+            {
+                p1x = new Vector2(0f, 1f);
+                rb2D2.AddForce(p1x * JumpPower);
+            }
 
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
+            if (isGrounded)
+            {
+                p2x = new Vector2(0f, 1f);
+                rb2D2.AddForce(p1x * JumpPower);
+            }
 
         }
 
         //Jump and Attack controls for Player 2
-       // if (Input.GetKeyDown("a"))
+        // if (Input.GetKeyDown("a"))
         {
 
         }
        // if (Input.GetKeyDown("d"))
         {
 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
         }
     }
 }
