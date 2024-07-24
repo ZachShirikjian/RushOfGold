@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 58221942565102724, guid: c76f995db1edf6847a2cb1d10ce8553d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58221942565102724, guid: c76f995db1edf6847a2cb1d10ce8553d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2060603404832175756, guid: c76f995db1edf6847a2cb1d10ce8553d, type: 3}
       propertyPath: m_Name
-      value: Ground (1) Variant
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

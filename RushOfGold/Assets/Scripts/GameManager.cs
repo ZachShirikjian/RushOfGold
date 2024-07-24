@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
         ResetValues();
         ResetUI();
         StopAllCoroutines();
-        StartCoroutine(GameTimer());
+        StartCoroutine(NewRoundCountdown());
+        //StartCoroutine(GameTimer());
        // StartCountdown();
     }
 
@@ -42,6 +43,25 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public IEnumerator NewRoundCountdown()
+    {
+        for (int i = 3; i > 0; i--)
+        {
+            if(i > 0)
+            {
+                yield return new WaitForSeconds(1f);
+                countdownTimer.text = i.ToString();
+            }
+            else if (i <=0)
+            {
+                countdownTimer.text = "GO!";
+                yield return new WaitForSeconds(0.5f);
+                countdownTimer.text = "";
+                StartCoroutine(GameTimer());
+            }
+            
+        }
+    }
     //Do the timer counting down from timeRemaining (60)
     //Reduce the amount of time left by 1 second every second.
     public IEnumerator GameTimer()
@@ -50,10 +70,14 @@ public class GameManager : MonoBehaviour
         {
             if(timeRunning == true)
             {
-                yield return new WaitForSeconds(1f);
-                timeRemaining--;
-                timerText.text = timeRemaining.ToString();
-                Debug.Log(timeRemaining);
+                if(timeRemaining > 0)
+                {
+                    yield return new WaitForSeconds(1f);
+                    timeRemaining--;
+                    timerText.text = timeRemaining.ToString();
+                    Debug.Log(timeRemaining);
+                }
+             
                 if(timeRemaining <= 0)
                 {
                     StopTimer();
