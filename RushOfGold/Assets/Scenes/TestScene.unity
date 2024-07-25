@@ -2752,6 +2752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 2216551871993405883, guid: 7a4f30d806f115944a7c633e690f401b, type: 3}
+      propertyPath: m_TagString
+      value: Coin
+      objectReference: {fileID: 0}
     - target: {fileID: 7585572275224314392, guid: 7a4f30d806f115944a7c633e690f401b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 10.24
