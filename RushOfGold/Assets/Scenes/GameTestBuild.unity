@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 1167094631}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +367,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -415,8 +423,31 @@ PrefabInstance:
     - {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2097414222}
   m_SourcePrefab: {fileID: 100100000, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+--- !u!1 &2097414221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+  m_PrefabInstance: {fileID: 2097414220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2097414222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097414221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103277abaddc10448a4b01e421d83674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2D2: {fileID: 1010972922}
+  MoveSpeed: 4
+  JumpPower: 5
 --- !u!1001 &2102835823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,6 +460,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: rb2D
       value: 
@@ -439,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 1010972922}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: MoveSpeed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_LocalPosition.x
