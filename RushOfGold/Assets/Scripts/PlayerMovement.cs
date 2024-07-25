@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float JumpPower = 5f;
     public int coinWallet;
     private Vector2 p1x;
-    private bool isGrounded;
+    public bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +29,30 @@ public class PlayerMovement : MonoBehaviour
         //Sidways movement control for player 1
         if (Input.GetKey(KeyCode.A))
         {
-            p1x = new Vector2(-1f, 0f);
-            rb2D.AddForce(p1x * MoveSpeed );
+            if (isGrounded)
+            {
+               p1x = new Vector2(-1f, 0f);
+               rb2D.AddForce(p1x * MoveSpeed);
+            }
+            else
+            {
+                p1x = new Vector2(0, 0f);
+                rb2D.AddForce(p1x * MoveSpeed);
+            }  
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            p1x = new Vector2(1f, 0f);
-            rb2D.AddForce(p1x * MoveSpeed);
+            if (isGrounded)
+            {
+                p1x = new Vector2(1f, 0f);
+                rb2D.AddForce(p1x * MoveSpeed);
+            }
+            else
+            {
+                p1x = new Vector2(0, 0f);
+                rb2D.AddForce(p1x * MoveSpeed);
+            }
         }
 
         //Jump and Attack controls for Player 1
@@ -44,31 +60,37 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                p1x = new Vector2(0f, 1f);
+                p1x = new Vector2(0, 1f);
                 rb2D.AddForce(p1x * JumpPower);
             }
 
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
         }
-        else if (collision.gameObject.CompareTag("coin"))
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("coin"))
         {
             coinWallet += 1;
 
         }
-        else
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = false;
         }
-
-        
     }
-    
-    
+
+
 }

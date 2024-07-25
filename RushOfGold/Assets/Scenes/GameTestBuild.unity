@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1167094633}
   - component: {fileID: 1167094632}
   - component: {fileID: 1167094631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1167094630}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 86b6370f7105ac042afc46d07b03ce83, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -447,7 +447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2D2: {fileID: 1010972922}
   MoveSpeed: 4
-  JumpPower: 5
+  JumpPower: 375
+  coinWallet: 0
+  isGrounded: 0
 --- !u!1001 &2102835823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,6 +461,10 @@ PrefabInstance:
     - target: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Interpolate
@@ -476,6 +482,10 @@ PrefabInstance:
       propertyPath: rb2D2
       value: 
       objectReference: {fileID: 1010972922}
+    - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: JumpPower
+      value: 375
+      objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: MoveSpeed
       value: 4

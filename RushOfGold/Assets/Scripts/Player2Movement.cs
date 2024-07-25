@@ -10,7 +10,7 @@ public class Player2Movement : MonoBehaviour
     public float JumpPower = 5f;
     public int coinWallet;
     private Vector2 p2x;
-    private bool isGrounded;
+    public bool isGrounded;
 
 
 
@@ -26,14 +26,30 @@ public class Player2Movement : MonoBehaviour
         //Sideways player control for player 2 
         if (Input.GetKey(KeyCode.J))
         {
-            p2x = new Vector2(-1f, 0f);
-            rb2D2.AddForce(p2x * MoveSpeed);
+            if (isGrounded)
+            {
+                p2x = new Vector2(-1f, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
+            }
+            else
+            {
+                p2x = new Vector2(0, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
+            }
         }
 
         if (Input.GetKey(KeyCode.L))
         {
-            p2x = new Vector2(1f, 0f);
-            rb2D2.AddForce(p2x * MoveSpeed);
+            if (isGrounded)
+            {
+                p2x = new Vector2(1f, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
+            }
+            else
+            {
+                p2x = new Vector2(0, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
+            }
         }
 
 
@@ -42,25 +58,32 @@ public class Player2Movement : MonoBehaviour
         {
             if (isGrounded)
             {
-                p2x = new Vector2(0f, 1f);
+                p2x = new Vector2(0, 1f);
                 rb2D2.AddForce(p2x * JumpPower);
             }
         }
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
         }
-        else if (collision.gameObject.CompareTag("coin"))
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("coin"))
         {
             coinWallet += 1;
 
         }
-        else
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = false;
         }
