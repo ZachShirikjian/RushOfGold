@@ -20,6 +20,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
+    public TextMeshProUGUI p1CoinWallet;
+    public TextMeshProUGUI p2CoinWallet;
+
+    private GameObject player1;
+    private PlayerMovement p1Script;
+    private GameObject player2;
+    private Player2Movement p2Script;
+
   //  private UIHandler uiScript; //script to handle the UI components 
 
     // Start is called before the first frame update
@@ -33,6 +41,10 @@ public class GameManager : MonoBehaviour
         ResetUI();
         StopAllCoroutines();
         StartCoroutine(NewRoundCountdown());
+        player1 = GameObject.Find("Player1");
+        player2 = GameObject.Find("Player2");
+        p1Script = player1.GetComponent<PlayerMovement>();
+        p2Script = player2.GetComponent<Player2Movement>();
         //StartCoroutine(GameTimer());
        // StartCountdown();
     }
@@ -40,7 +52,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        p1CoinWallet.text = p1Script.coinWallet.ToString();
+        p2CoinWallet.text = p2Script.coinWallet.ToString();
     }
 
     public IEnumerator NewRoundCountdown()

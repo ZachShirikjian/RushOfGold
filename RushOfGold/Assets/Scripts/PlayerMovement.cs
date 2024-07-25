@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed; 
     
     //REFERENCES//
-    public Rigidbody2D rb2D;
-    public float MoveSpeed = 5f;
-    public float JumpPower = 5f;
+    private Rigidbody2D rb2D;
+    public float MoveSpeed = 2f;
+    public float JumpPower = 2f;
     public int coinWallet;
     private Vector2 p1x;
     public bool isGrounded;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb2D = GetComponent<Rigidbody2D>();
         isGrounded = false;
         coinWallet = 0;
     }

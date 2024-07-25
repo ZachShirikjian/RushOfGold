@@ -5,18 +5,17 @@ using UnityEngine.Rendering;
 
 public class Player2Movement : MonoBehaviour
 {
-    public Rigidbody2D rb2D2;
-    public float MoveSpeed = 5f;
-    public float JumpPower = 5f;
+    private Rigidbody2D rb2DTwo;
+    public float MoveSpeed = 2f;
+    public float JumpPower = 2f;
     public int coinWallet;
     private Vector2 p2x;
     public bool isGrounded;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
+        rb2DTwo = GetComponent<Rigidbody2D>();
         isGrounded = false;
     }
 
@@ -29,12 +28,12 @@ public class Player2Movement : MonoBehaviour
             if (isGrounded)
             {
                 p2x = new Vector2(-1f, 0f);
-                rb2D2.AddForce(p2x * MoveSpeed);
+                rb2DTwo.AddForce(p2x * MoveSpeed);
             }
             else
             {
                 p2x = new Vector2(0, 0f);
-                rb2D2.AddForce(p2x * MoveSpeed);
+                rb2DTwo.AddForce(p2x * MoveSpeed);
             }
         }
 
@@ -43,12 +42,12 @@ public class Player2Movement : MonoBehaviour
             if (isGrounded)
             {
                 p2x = new Vector2(1f, 0f);
-                rb2D2.AddForce(p2x * MoveSpeed);
+                rb2DTwo.AddForce(p2x * MoveSpeed);
             }
             else
             {
                 p2x = new Vector2(0, 0f);
-                rb2D2.AddForce(p2x * MoveSpeed);
+                rb2DTwo.AddForce(p2x * MoveSpeed);
             }
         }
 
@@ -59,7 +58,7 @@ public class Player2Movement : MonoBehaviour
             if (isGrounded)
             {
                 p2x = new Vector2(0, 1f);
-                rb2D2.AddForce(p2x * JumpPower);
+                rb2DTwo.AddForce(p2x * JumpPower);
             }
         }
 

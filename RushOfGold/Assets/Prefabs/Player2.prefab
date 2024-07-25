@@ -85,11 +85,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2275968392746593734}
   m_SourcePrefab: {fileID: 100100000, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
---- !u!50 &5752213118075361450 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3662642308698442170, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
-  m_PrefabInstance: {fileID: 9009352770711507216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6187390218430544594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
@@ -107,8 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103277abaddc10448a4b01e421d83674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2D2: {fileID: 5752213118075361450}
-  MoveSpeed: 4
-  JumpPower: 375
+  MoveSpeed: 1
+  JumpPower: 400
   coinWallet: 0
   isGrounded: 0

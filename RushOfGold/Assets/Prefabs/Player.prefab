@@ -203,9 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ed9fa9862955e4d866fd6753716233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rb2D: {fileID: 0}
-  MoveSpeed: 5
-  JumpPower: 5
+  speed: 1
+  MoveSpeed: 1
+  JumpPower: 400
   coinWallet: 0
   isGrounded: 0
