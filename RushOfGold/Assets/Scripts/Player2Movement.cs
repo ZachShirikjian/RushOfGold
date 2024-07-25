@@ -1,70 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class PlayerMovement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
-    //VARIABLES//
-    public float speed; 
-    
-    //REFERENCES//
-    public Rigidbody2D rb2D;
+    public Rigidbody2D rb2D2;
     public float MoveSpeed = 5f;
     public float JumpPower = 5f;
     public int coinWallet;
-    private Vector2 p1x;
+    private Vector2 p2x;
     public bool isGrounded;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         isGrounded = false;
-        coinWallet = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Sidways movement control for player 1
-        if (Input.GetKey(KeyCode.A))
+        //Sideways player control for player 2 
+        if (Input.GetKey(KeyCode.J))
         {
             if (isGrounded)
             {
-               p1x = new Vector2(-1f, 0f);
-               rb2D.AddForce(p1x * MoveSpeed);
+                p2x = new Vector2(-1f, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
             }
             else
             {
-                p1x = new Vector2(0, 0f);
-                rb2D.AddForce(p1x * MoveSpeed);
-            }  
+                p2x = new Vector2(0, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
+            }
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.L))
         {
             if (isGrounded)
             {
-                p1x = new Vector2(1f, 0f);
-                rb2D.AddForce(p1x * MoveSpeed);
+                p2x = new Vector2(1f, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
             }
             else
             {
-                p1x = new Vector2(0, 0f);
-                rb2D.AddForce(p1x * MoveSpeed);
+                p2x = new Vector2(0, 0f);
+                rb2D2.AddForce(p2x * MoveSpeed);
             }
         }
 
-        //Jump and Attack controls for Player 1
-        if (Input.GetKeyDown(KeyCode.W))
+
+        //Jump controls for player 2
+        if (Input.GetKeyDown(KeyCode.I))
         {
             if (isGrounded)
             {
-                p1x = new Vector2(0, 1f);
-                rb2D.AddForce(p1x * JumpPower);
+                p2x = new Vector2(0, 1f);
+                rb2D2.AddForce(p2x * JumpPower);
             }
-
         }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -73,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -83,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
@@ -91,6 +88,4 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
-
-
 }
