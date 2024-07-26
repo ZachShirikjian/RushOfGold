@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             coinWallet += 1;
-
         }
     }
 

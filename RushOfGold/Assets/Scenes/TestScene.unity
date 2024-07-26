@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &5112875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
+  m_PrefabInstance: {fileID: 2018740911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103277abaddc10448a4b01e421d83674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &74164522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,7 +144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: MoveSpeed
@@ -2082,6 +2093,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574911581}
   m_CullTransparentMesh: 1
+--- !u!114 &1706800936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+  m_PrefabInstance: {fileID: 74164522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ed9fa9862955e4d866fd6753716233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742383038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +2974,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 445988636183766972, guid: b263a8de9719a9e4598db9ecc2f4a4f6, type: 3}
+      propertyPath: p1Script
+      value: 
+      objectReference: {fileID: 1706800936}
+    - target: {fileID: 445988636183766972, guid: b263a8de9719a9e4598db9ecc2f4a4f6, type: 3}
+      propertyPath: p2Script
+      value: 
+      objectReference: {fileID: 5112875}
     - target: {fileID: 445988636183766972, guid: b263a8de9719a9e4598db9ecc2f4a4f6, type: 3}
       propertyPath: timerText
       value: 
