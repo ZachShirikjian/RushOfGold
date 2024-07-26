@@ -103,6 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
-  JumpPower: 400
+  JumpPower: 300
   coinWallet: 0
   isGrounded: 0

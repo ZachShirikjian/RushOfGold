@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+//Respawns a player if they leave the level bounds
+public class LevelBounds : MonoBehaviour
 {
     //REFERENCES//
-    private GameManager gm; //Reference to GameManager for adjusting score of P1/P2 coins 
+    private GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +20,24 @@ public class Coin : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    //If a player goes out of bounds, call the method to lose their life depending on which player fell out of bounds.
+    //1 = Player 1 
+    //2 = Player 2 
+    private void OnTriggerExit2D(Collider2D other)
     {
-
-        //If Player 1 picks up a coin,
-        //Update their coin wallet.
-        if(other.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
+            Debug.Log(other.gameObject.name + " has lost a life.");
             if(other.gameObject.name == "Player1")
             {
-                gm.p1CoinWallet++;
-                Destroy(this.gameObject);
+                gm.LoseLife(1);
+
             }
+
             else if(other.gameObject.name == "Player2")
             {
-                gm.p2CoinWallet++;
-                Destroy(this.gameObject);
+                gm.LoseLife(2);
             }
         }
     }
-
 }

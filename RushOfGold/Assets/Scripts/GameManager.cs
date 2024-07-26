@@ -7,22 +7,32 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     //VARIABLES//
-    public bool timeRunning = true; //Bool to check if the timer is running or not
+    public bool timeRunning = false; //Bool to check if the timer is running or not
     public int timeRemaining = 60; //The Time remaining within a match 
+    public int p1CoinWallet = 0; //The Coin Wallet for Player 1
+    public int p2CoinWallet = 0; //The Coin Wallet for Player 2 
     public int p1Lives = 3; //Number of Lives Player 1 has
     public int p2Lives = 3; //Number of Lives Player 2 has 
     public int p1Coins = 0; //Amount of Coins Player 1 has 
-    public int p2Coins = 0; //Amount of Coins Player 2 has 
-
+    public int p2Coins = 0; //Amount of Coins Player 2 has
+                            
+                            //Starting Position GameObject for Player1
+                            //Starting Position GameObject for Player2 
     
     //REFERENCES//
     //private Canvas canvas;
+
+    //UI REFERENCES//
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
-    public TextMeshProUGUI p1CoinWallet;
-    public TextMeshProUGUI p2CoinWallet;
+    public TextMeshProUGUI p1CoinWalletText;
+    public TextMeshProUGUI p2CoinWalletText;
 
+    public TextMeshProUGUI p1LivesText;
+    public TextMeshProUGUI p2LivesText;
+
+    //PLAYER 1/2 REFERENCES//
     private GameObject player1;
     private PlayerMovement p1Script;
     private GameObject player2;
@@ -30,7 +40,6 @@ public class GameManager : MonoBehaviour
 
   //  private UIHandler uiScript; //script to handle the UI components 
 
-    // Start is called before the first frame update
 
     //Reset the Values of each Player's Coins & Lives, & Timer
     //Reference the UI script & begin handling UI aspects
@@ -45,27 +54,33 @@ public class GameManager : MonoBehaviour
         player2 = GameObject.Find("Player2");
         p1Script = player1.GetComponent<PlayerMovement>();
         p2Script = player2.GetComponent<Player2Movement>();
+        timeRunning = false;
         //StartCoroutine(GameTimer());
        // StartCountdown();
     }
 
-    // Update is called once per frame
+    //Ensure the P1/P2 Coin Wallet & on-screen UI elements are updated with their in-game values 
     void Update()
     {
-        p1CoinWallet.text = p1Script.coinWallet.ToString();
-        p2CoinWallet.text = p2Script.coinWallet.ToString();
+        p1CoinWalletText.text = p1CoinWallet.ToString();
+        p2CoinWalletText.text = p2CoinWallet.ToString();
+
+        p1LivesText.text = p1Lives.ToString();
+        p2LivesText.text = p2Lives.ToString();
+
     }
 
     public IEnumerator NewRoundCountdown()
     {
-        for (int i = 3; i > 0; i--)
+        for (int i = 3; i >= 0; i--)
         {
             if(i > 0)
             {
                 yield return new WaitForSeconds(1f);
                 countdownTimer.text = i.ToString();
             }
-            else if (i <=0)
+            
+            if (i <= 0)
             {
                 countdownTimer.text = "GO!";
                 yield return new WaitForSeconds(0.5f);
@@ -79,6 +94,7 @@ public class GameManager : MonoBehaviour
     //Reduce the amount of time left by 1 second every second.
     public IEnumerator GameTimer()
     {
+        timeRunning = true;
         for(int i = timeRemaining; i > 0; i--)
         {
             if(timeRunning == true)
@@ -100,15 +116,18 @@ public class GameManager : MonoBehaviour
             if(timeRunning == false)
             {
                 Debug.Log("STOP TIMER");
+                StopTimer();
                 break;
             }
             
         }
     }
 
+    //Stop the Timer, after 60 seconds have passed OR until a player loses all of their lives. 
     public void StopTimer()
     {
         Debug.Log("Time's Up!");
+        timeRunning = false;
     }
 
     //Resets the Lives & Coins for P1 & P2, and the timer for each new level.
@@ -128,5 +147,31 @@ public class GameManager : MonoBehaviour
         countdownTimer.text = "3";
     }
 
-    //Start the 3,2,1, GO Countdown before the game begins 
+    //Subtracts 1 Life from a Player after falling off-stage.
+    public void LoseLife(int playerNumber)
+    {
+        if(playerNumber == 1)
+        {
+            p1Lives--;
+            p1LivesText.text = p1Lives.ToString();
+
+            if(p1Lives <= 0)
+            {
+                StopTimer();
+            }
+        }
+
+        else if(playerNumber == 2)
+        {
+            p2Lives--;
+            p2LivesText.text = p2Lives.ToString();
+
+            if(p2Lives <= 0)
+            {
+                StopTimer();
+            }
+        }
+    }
+
+    //Update the Coin Wallet for P1/P2 & ensure their max is only 10 at a time 
 }

@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2D;
     public float MoveSpeed = 2f;
     public float JumpPower = 2f;
-    public int coinWallet;
     private Vector2 p1x;
     public bool isGrounded;
 
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         isGrounded = false;
-        coinWallet = 0;
     }
 
     // Update is called once per frame
@@ -75,13 +73,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         }
         
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            coinWallet += 1;
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
