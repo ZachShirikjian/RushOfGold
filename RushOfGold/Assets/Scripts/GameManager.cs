@@ -15,10 +15,10 @@ public class GameManager : MonoBehaviour
     public int p2Lives = 3; //Number of Lives Player 2 has 
     public int p1Coins = 0; //Amount of Coins Player 1 has 
     public int p2Coins = 0; //Amount of Coins Player 2 has
-                            
-                            //Starting Position GameObject for Player1
-                            //Starting Position GameObject for Player2 
-    
+
+    public Transform p1SpawnPos; //Starting Position GameObject for Player1
+    public Transform p2SpawnPos; //Starting Position GameObject for Player2 
+
     //REFERENCES//
     //private Canvas canvas;
 
@@ -54,6 +54,14 @@ public class GameManager : MonoBehaviour
         player2 = GameObject.Find("Player2");
         p1Script = player1.GetComponent<PlayerMovement>();
         p2Script = player2.GetComponent<Player2Movement>();
+
+        p1Script.enabled = false;
+        p2Script.enabled = false;
+
+        //Reset the Spawn Position of Player 1 and Player 2 every time a new stage is loaded
+        player1.transform.position = p1SpawnPos.position;
+        player2.transform.position = p2SpawnPos.position;
+
         timeRunning = false;
         //StartCoroutine(GameTimer());
        // StartCountdown();
@@ -92,10 +100,14 @@ public class GameManager : MonoBehaviour
     }
     //Do the timer counting down from timeRemaining (60)
     //Reduce the amount of time left by 1 second every second.
+
+    //Enables P1/P2 movement after countdown timer ends! 
     public IEnumerator GameTimer()
     {
         timeRunning = true;
-        for(int i = timeRemaining; i > 0; i--)
+        p1Script.enabled = true;
+        p2Script.enabled = true;
+        for (int i = timeRemaining; i > 0; i--)
         {
             if(timeRunning == true)
             {
@@ -104,7 +116,7 @@ public class GameManager : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                     timeRemaining--;
                     timerText.text = timeRemaining.ToString();
-                    Debug.Log(timeRemaining);
+                    //Debug.Log(timeRemaining);
                 }
              
                 if(timeRemaining <= 0)
@@ -128,6 +140,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Time's Up!");
         timeRunning = false;
+
+        p1Script.enabled = false;
+        p2Script.enabled = false;
     }
 
     //Resets the Lives & Coins for P1 & P2, and the timer for each new level.
@@ -159,6 +174,12 @@ public class GameManager : MonoBehaviour
             {
                 StopTimer();
             }
+
+            //Resets P1's position to their Spawn Position on death. 
+            else if(p1Lives > 0)
+            {
+                player1.transform.position = p1SpawnPos.position;
+            }
         }
 
         else if(playerNumber == 2)
@@ -166,9 +187,14 @@ public class GameManager : MonoBehaviour
             p2Lives--;
             p2LivesText.text = p2Lives.ToString();
 
-            if(p2Lives <= 0)
+            if (p2Lives <= 0)
             {
                 StopTimer();
+            }
+
+            else if(p2Lives > 0)
+            {
+                player2.transform.position = p2SpawnPos.position;
             }
         }
     }
