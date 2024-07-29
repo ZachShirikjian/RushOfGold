@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Jump and Attack controls for Player 1
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (isGrounded)
             {
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 rb2D.velocity = p1x;
             }
         }
-        if (Input.GetKeyUp(KeyCode.I) && rb2D.velocity.y > 0f)
+        if (Input.GetKeyUp(KeyCode.W) && rb2D.velocity.y > 0f)
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y * 0.5f);
         }
