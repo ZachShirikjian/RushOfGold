@@ -19,23 +19,17 @@ public class Player2Movement : MonoBehaviour
         rb2DTwo = GetComponent<Rigidbody2D>();
     }
 
-   private void FixedUpdate()
+    private void FixedUpdate()
     {
         rb2DTwo.velocity = new Vector2(movement * MoveSpeed, rb2DTwo.velocity.y);
     }
-
-  //  void Move()
-   // {
-       
- //   }
-
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.J))
         {
-           movement = -1;
+            movement = -1;
         }
 
         if (Input.GetKey(KeyCode.L))
@@ -62,12 +56,10 @@ public class Player2Movement : MonoBehaviour
                 rb2DTwo.velocity = p2x;
             }
         }
-
         if (Input.GetKeyUp(KeyCode.I) && rb2DTwo.velocity.y > 0f)
         {
             rb2DTwo.velocity = new Vector2(rb2DTwo.velocity.x, rb2DTwo.velocity.y * 0.5f);
         }
-
         Flip();
     }
 
@@ -88,7 +80,6 @@ public class Player2Movement : MonoBehaviour
         {
             isGrounded = true;
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)

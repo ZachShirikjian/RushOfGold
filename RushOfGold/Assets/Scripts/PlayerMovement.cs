@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{    
+{
     //REFERENCES//
     private Rigidbody2D rb2D;
     public float MoveSpeed = 2f;
@@ -56,12 +56,10 @@ public class PlayerMovement : MonoBehaviour
                 rb2D.velocity = p1x;
             }
         }
-
         if (Input.GetKeyUp(KeyCode.I) && rb2D.velocity.y > 0f)
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y * 0.5f);
         }
-
         Flip();
     }
 
@@ -83,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -93,6 +90,4 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
-
-
 }
