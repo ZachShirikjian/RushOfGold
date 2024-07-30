@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //REFERENCES//
     private Rigidbody2D rb2D;
+    public float KBforce;
     public float MoveSpeed = 2f;
     public float JumpPower = 2f;
     private Vector2 p1x;
@@ -82,6 +83,16 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.otherCollider.CompareTag("P2 Attack Hitbox"))
+        {
+            Debug.Log(" P1 Got Hit");
+            var dirrection = rb2D.transform.position - collision.transform.position;
+            rb2D.AddForce(dirrection * KBforce);
+        }
+    }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {

@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class Player2Movement : MonoBehaviour
 {
     private Rigidbody2D rb2DTwo;
+    public float KBforce;
     public float MoveSpeed = 2f;
     public float JumpPower = 2f;
     private Vector2 p2x;
@@ -79,6 +80,16 @@ public class Player2Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.otherCollider.CompareTag("P2 Attack Hitbox"))
+        {
+            Debug.Log(" P2 Got Hit");
+            var dirrection = rb2DTwo.transform.position - collision.transform.position;
+            rb2DTwo.AddForce(dirrection * KBforce);
         }
     }
 
