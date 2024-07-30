@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: JumpPower
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: isGrounded
@@ -2832,7 +2832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: JumpPower
-      value: 100
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
+      propertyPath: isGrounded
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6187390218430544594, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_Name
