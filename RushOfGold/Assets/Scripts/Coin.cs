@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         //Destroys coins after 3 seconds to de-spawn them.
-        Destroy(this, 3f);
+        Destroy(this.gameObject, 3f);
     }
 
     // Update is called once per frame

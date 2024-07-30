@@ -31,7 +31,6 @@ public class LevelBounds : MonoBehaviour
             if(other.gameObject.name == "Player1")
             {
                 gm.LoseLife(1);
-
             }
 
             else if(other.gameObject.name == "Player2")
