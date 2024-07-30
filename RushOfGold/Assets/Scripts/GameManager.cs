@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     public int p2CoinWallet = 0; //The Coin Wallet for Player 2 
     public int p1Lives = 3; //Number of Lives Player 1 has
     public int p2Lives = 3; //Number of Lives Player 2 has 
-    public int p1Coins = 0; //Amount of Coins Player 1 has 
-    public int p2Coins = 0; //Amount of Coins Player 2 has
 
     public Transform p1SpawnPos; //Starting Position GameObject for Player1
     public Transform p2SpawnPos; //Starting Position GameObject for Player2 
@@ -151,8 +149,8 @@ public class GameManager : MonoBehaviour
         p1Lives = 3;
         p2Lives = 3;
         timeRemaining = 60;
-        p1Coins = 0;
-        p2Coins = 0; 
+        p1CoinWallet = 0;
+        p2CoinWallet = 0; 
     }
 
     //Resets the UI of the Game 
@@ -178,6 +176,7 @@ public class GameManager : MonoBehaviour
             //Resets P1's position to their Spawn Position on death. 
             else if(p1Lives > 0)
             {
+                p1CoinWallet = p1CoinWallet / 2;
                 player1.transform.position = p1SpawnPos.position;
             }
         }
@@ -194,6 +193,7 @@ public class GameManager : MonoBehaviour
 
             else if(p2Lives > 0)
             {
+                p2CoinWallet = p2CoinWallet / 2;
                 player2.transform.position = p2SpawnPos.position;
             }
         }

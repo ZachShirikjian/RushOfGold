@@ -146,13 +146,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: JumpPower
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: isGrounded
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2784,11 +2792,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 849035878573567895, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 849035878573567895, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 849035878573567895, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2821,6 +2829,10 @@ PrefabInstance:
     - target: {fileID: 849035878573567895, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
+      propertyPath: JumpPower
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6187390218430544594, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_Name
