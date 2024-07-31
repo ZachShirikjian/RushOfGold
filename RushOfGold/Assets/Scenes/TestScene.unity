@@ -1131,30 +1131,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &686632745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1495668570417745287, guid: 50d2ede8e55eb6c4bba0e4c325002334, type: 3}
-  m_PrefabInstance: {fileID: 971703001750868464}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &686632748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686632745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13e72b6fc28bbf4c8e27776194f1167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  coinPrefab: {fileID: 2216551871993405883, guid: 7a4f30d806f115944a7c633e690f401b, type: 3}
-  spawnInterval: 2
-  spawnAreaMinX: -10
-  spawnAreaMaxX: 10
-  spawnAreaMinY: 0
-  spawnAreaMaxY: 5
 --- !u!1 &733686767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,6 +2917,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7118964261171272901, guid: 50d2ede8e55eb6c4bba0e4c325002334, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 6885117715404043238}
     - target: {fileID: 1495668570417745287, guid: 50d2ede8e55eb6c4bba0e4c325002334, type: 3}
       propertyPath: m_Name
       value: CoinSpawner
@@ -2988,10 +2968,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1495668570417745287, guid: 50d2ede8e55eb6c4bba0e4c325002334, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 686632748}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50d2ede8e55eb6c4bba0e4c325002334, type: 3}
 --- !u!1001 &1057102272773679456
 PrefabInstance:
@@ -3244,6 +3221,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b263a8de9719a9e4598db9ecc2f4a4f6, type: 3}
+--- !u!114 &6885117715404043238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 445988636183766972, guid: b263a8de9719a9e4598db9ecc2f4a4f6, type: 3}
+  m_PrefabInstance: {fileID: 6885117715404043237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19397941d23785b47a2348b771708f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
