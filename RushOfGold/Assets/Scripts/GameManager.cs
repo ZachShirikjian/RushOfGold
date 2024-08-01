@@ -7,6 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     //VARIABLES//
+    public bool gamePaused = false; //Checks to see if the Game is Paused or not. 
     public bool timeRunning = false; //Bool to check if the timer is running or not
     public int timeRemaining = 60; //The Time remaining within a match 
     public int p1CoinWallet = 0; //The Coin Wallet for Player 1
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     //private Canvas canvas;
 
     //UI REFERENCES//
+    public GameObject pauseMenu;    //Reference to the Pause Menu
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour
         player2.transform.position = p2SpawnPos.position;
 
         timeRunning = false;
+        gamePaused = false;
+        pauseMenu.SetActive(false);
         //StartCoroutine(GameTimer());
        // StartCountdown();
     }
@@ -74,6 +78,31 @@ public class GameManager : MonoBehaviour
         p1LivesText.text = p1Lives.ToString();
         p2LivesText.text = p2Lives.ToString();
 
+        //If either Player presses P while the game timer is running, Pause the Game. 
+        if(Input.GetKeyDown(KeyCode.P) && timeRunning == true)
+        {
+            PauseGame();
+        }
+
+    }
+
+    //PAUSE MENU TO ALLOW FOR IN-GAME PAUSING, call this method when the P key is pressed. 
+    public void PauseGame()
+    {
+        if(gamePaused == true)
+        {
+            gamePaused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+        else if(gamePaused == false)
+        {
+            gamePaused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+ 
     }
 
     public IEnumerator NewRoundCountdown()
@@ -143,14 +172,15 @@ public class GameManager : MonoBehaviour
         p2Script.enabled = false;
     }
 
-    //Resets the Lives & Coins for P1 & P2, and the timer for each new level.
+    //Resets the TimeScale, Lives & Coins for P1 & P2, and the timer for each new level.
     public void ResetValues()
     {
         p1Lives = 3;
         p2Lives = 3;
         timeRemaining = 60;
         p1CoinWallet = 0;
-        p2CoinWallet = 0; 
+        p2CoinWallet = 0;
+        Time.timeScale = 1f;
     }
 
     //Resets the UI of the Game 
