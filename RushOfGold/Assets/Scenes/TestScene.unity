@@ -159,6 +159,14 @@ PrefabInstance:
       propertyPath: isGrounded
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5761956406350004981, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: KBforce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -2228,6 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 0.5
   attacking: 0
+  KBforce: 2
 --- !u!1 &1096998757
 GameObject:
   m_ObjectHideFlags: 0

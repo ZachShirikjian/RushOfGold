@@ -13,8 +13,14 @@ public class Player2Attack : MonoBehaviour
     //VARIABLES//
     public float attackCooldown = 0.5f;
     public bool attacking; //Bool checking if you're currently attacking or not 
+    public float KBforce; //Amount of knockback force for a character's attack 
+
     //REFERENCES// 
     private BoxCollider2D attackCollider;
+
+    private GameObject attackTarget;
+    private Rigidbody2D targetRD2D;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,11 +62,16 @@ public class Player2Attack : MonoBehaviour
 
     //If Player 2's trigger collider touches Player 1,
     //Call the Player 1 method to be knocked back. 
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player1")
         {
             Debug.Log("Player 1 was hit!");
+            attackTarget = other.gameObject;
+            targetRD2D = other.GetComponent<Rigidbody2D>();
+            var dirrection = attackTarget.transform.position - this.transform.position;
+            targetRD2D.AddForce(dirrection * KBforce);
         }
     }
 }
