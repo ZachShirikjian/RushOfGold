@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false; //Checks to see if the Game is Paused or not. 
     public bool timeRunning = false; //Bool to check if the timer is running or not
     public int timeRemaining = 60; //The Time remaining within a match 
+    public int p1CoinBarrel = 0; //Coin Barrel for Player 1
+    public int p2CoinBarrel = 0; //Coin Barrel for Player 2
     public int p1CoinWallet = 0; //The Coin Wallet for Player 1
     public int p2CoinWallet = 0; //The Coin Wallet for Player 2 
     public int p1Lives = 3; //Number of Lives Player 1 has
@@ -26,9 +28,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
+    //Coin Wallet UI for P1/P2
     public TextMeshProUGUI p1CoinWalletText;
     public TextMeshProUGUI p2CoinWalletText;
 
+    //Coin Barrel UI
+    public TextMeshProUGUI p1CoinBarrelText;
+    public TextMeshProUGUI p2CoinBarrelText;
+
+    //Lives UI
     public TextMeshProUGUI p1LivesText;
     public TextMeshProUGUI p2LivesText;
 
@@ -72,6 +80,9 @@ public class GameManager : MonoBehaviour
     //Ensure the P1/P2 Coin Wallet & on-screen UI elements are updated with their in-game values 
     void Update()
     {
+        p1CoinBarrelText.text = p1CoinBarrel.ToString();
+        p2CoinBarrelText.text = p2CoinBarrel.ToString();
+
         p1CoinWalletText.text = p1CoinWallet.ToString();
         p2CoinWalletText.text = p2CoinWallet.ToString();
 
@@ -180,6 +191,8 @@ public class GameManager : MonoBehaviour
         timeRemaining = 60;
         p1CoinWallet = 0;
         p2CoinWallet = 0;
+        p1CoinBarrel = 0;
+        p2CoinBarrel = 0;
         Time.timeScale = 1f;
     }
 
