@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
     //REFERENCES//
     private Rigidbody2D rb2D;
 
-    //Reference to the Moneybag prefab 
+    //Reference to the Default Moneybag prefab 
     public GameObject moneyBag;
+
+    //The GameObject referencing the clone of the Moneybag spawning in 
+    private GameObject newMoneyBag; 
 
     //Spawn Position of the Moneybag 
     public Transform moneyBagSpawnPos;
@@ -51,15 +54,22 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) && pickedUp == false)
             {
                 Debug.Log("Spawn Moneybag");
-                Instantiate(moneyBag, moneyBagSpawnPos);
+
+                //Instantiates a Moneybag prefab at the money bag spawn position as a child of the Player
+                //Spawns a new Money Bag GameObject to allow its prefab to be separated from the Player transform. 
+                newMoneyBag = Instantiate(moneyBag, moneyBagSpawnPos);
+
                 pickedUp = true;
                 playerAttackScript.canAttack = false;
             }
             //If you've already picked up a Moneybag, 
             //Throw it and reset your coins.
+            
+            //Detach it from the Player so the arc doesn't change with player movement.
             else if (Input.GetKeyDown(KeyCode.Q) && pickedUp == true)
             {
                 Debug.Log("Throw moneyBag");
+                newMoneyBag.transform.parent = null;
                 gm.p1CoinWallet = 0;
                 pickedUp = false;
                 playerAttackScript.canAttack = true;

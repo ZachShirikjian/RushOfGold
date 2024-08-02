@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
                 if(timeRemaining <= 0)
                 {
                     StopTimer();
+                    CheckScores();
                 }
             }
 
@@ -181,6 +182,31 @@ public class GameManager : MonoBehaviour
 
         p1Script.enabled = false;
         p2Script.enabled = false;
+    }
+
+    //Check the Scores between Player 1 and Player 2 if time goes to 0 
+    public void CheckScores()
+    {
+        //If Player 1 has more coins in their barrel than Player 2
+        //Player 1 Wins 
+        if(p1CoinBarrel > p2CoinBarrel)
+        {
+            Debug.Log("Player 1 Wins!");
+        }
+
+        //If Player 2 has more coins in their barrel than Player 1
+        //Player 2 Wins 
+        else if (p2CoinBarrel > p1CoinBarrel)
+        {
+            Debug.Log("Player 2 Wins!");
+        }
+
+        //If the Coin Barrel amounts between both players match 
+        //Call it a tie. 
+        else if(p1CoinBarrel == p2CoinBarrel)
+        {
+            Debug.Log("DRAW");
+        }
     }
 
     //Resets the TimeScale, Lives & Coins for P1 & P2, and the timer for each new level.
