@@ -10,8 +10,13 @@ TagManager:
   - Coin
   - Moneybag
   - Ground
+<<<<<<< Updated upstream
   - P1 Attack Hitbox
   - P2 Attack Hitbox
+>>>>>>> Stashed changes
+=======
+  - Coinbag
+  - Player 1 Pot
 >>>>>>> Stashed changes
   layers:
   - Default

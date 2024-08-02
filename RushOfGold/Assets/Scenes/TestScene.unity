@@ -2755,6 +2755,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: P1Pot
       objectReference: {fileID: 0}
+    - target: {fileID: 1882862326358520152, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_TagString
+      value: Player 1 Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882862326358520152, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2637415663575807481, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
