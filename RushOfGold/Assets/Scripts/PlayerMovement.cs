@@ -14,10 +14,27 @@ public class PlayerMovement : MonoBehaviour
     private float movement;
     private bool IsFacingRight = true;
 
+    public bool pickedUp = false;
+
+    //REFERENCES//
+    //Reference to the Moneybag prefab 
+    public GameObject moneyBag;
+
+    //Spawn Position of the Moneybag 
+    public Transform moneyBagSpawnPos;
+
+    //Reference to the Player1CoinWallet
+    private GameManager gm;
+
+    //Reference to the Attack script 
+    private PlayerAttack playerAttackScript; 
+
     // Start is called before the first frame update
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAttackScript = GetComponentInChildren<PlayerAttack>();
     }
 
     private void FixedUpdate()
@@ -27,6 +44,28 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If you have at least 10 coins and press the Q button
+        //Spawn the Moneybag 
+        if (gm.p1CoinWallet >= 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) && pickedUp == false)
+            {
+                Debug.Log("Spawn Moneybag");
+                Instantiate(moneyBag, moneyBagSpawnPos);
+                pickedUp = true;
+                playerAttackScript.canAttack = false;
+            }
+            //If you've already picked up a Moneybag, 
+            //Throw it and reset your coins.
+            else if (Input.GetKeyDown(KeyCode.Q) && pickedUp == true)
+            {
+                Debug.Log("Throw moneyBag");
+                gm.p1CoinWallet = 0;
+                pickedUp = false;
+                playerAttackScript.canAttack = true;
+            }
+
+        }
         if (Input.GetKey(KeyCode.A))
         {
             movement = -1;

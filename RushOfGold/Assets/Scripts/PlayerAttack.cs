@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
     //VARIABLES//
     public float attackCooldown = 0.5f;
+    public bool canAttack; //Bool checking if you CAN attack. Set to false when holding a moneybag. 
     public bool attacking; //Bool checking if you're currently attacking or not 
     public float KBforce; //Amount of knockback force per character's attack 
 
@@ -23,6 +24,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attacking = false;
+        canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
         attackCollider.enabled = false;
     }
@@ -33,27 +36,31 @@ public class PlayerAttack : MonoBehaviour
     {
         //Enables the player to attack when pressing their respective key. 
         //After the cooldown ends, allow the player to attack again. 
-        if (Input.GetKeyDown(KeyCode.F) && !attacking && attackCooldown > 0)
+        if(canAttack)
         {
-            attacking = true;
-            attackCollider.enabled = true;
+            if (Input.GetKeyDown(KeyCode.F) && !attacking && attackCooldown > 0)
+            {
+                attacking = true;
+                attackCollider.enabled = true;
 
-           // Attack();
-        }
+                // Attack();
+            }
 
-        //When attacking, if the cooldown is active, subtract from the attackCooldown
-        if (attackCooldown > 0)
-        {
-            attackCooldown -= Time.deltaTime;
-        }
+            //When attacking, if the cooldown is active, subtract from the attackCooldown
+            if (attackCooldown > 0)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
 
-        //If the cooldown is over, allow players to attack again.
-        else if(attackCooldown <= 0)
-        {
-            attacking = false;
-            attackCollider.enabled = false;
-            attackCooldown = 0.5f;
+            //If the cooldown is over, allow players to attack again.
+            else if (attackCooldown <= 0)
+            {
+                attacking = false;
+                attackCollider.enabled = false;
+                attackCooldown = 0.5f;
+            }
         }
+       
     }
 
 
