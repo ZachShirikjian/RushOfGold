@@ -12,20 +12,16 @@ public class PlayerAttack : MonoBehaviour
 
     //VARIABLES//
     public float attackCooldown = 0.5f;
-    public bool canAttack; //Bool checking if you CAN attack. Set to false when holding a moneybag. 
+    public float KBforce;
     public bool attacking; //Bool checking if you're currently attacking or not 
-    public float KBforce; //Amount of knockback force per character's attack 
-
-
     //REFERENCES// 
     private BoxCollider2D attackCollider;
     private GameObject attackTarget;
     private Rigidbody2D targetRD2D;
+
     // Start is called before the first frame update
     void Start()
     {
-        attacking = false;
-        canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
         attackCollider.enabled = false;
     }
@@ -36,31 +32,27 @@ public class PlayerAttack : MonoBehaviour
     {
         //Enables the player to attack when pressing their respective key. 
         //After the cooldown ends, allow the player to attack again. 
-        if(canAttack)
+        if (Input.GetKeyDown(KeyCode.F) && !attacking && attackCooldown > 0)
         {
-            if (Input.GetKeyDown(KeyCode.F) && !attacking && attackCooldown > 0)
-            {
-                attacking = true;
-                attackCollider.enabled = true;
+            attacking = true;
+            attackCollider.enabled = true;
 
-                // Attack();
-            }
-
-            //When attacking, if the cooldown is active, subtract from the attackCooldown
-            if (attackCooldown > 0)
-            {
-                attackCooldown -= Time.deltaTime;
-            }
-
-            //If the cooldown is over, allow players to attack again.
-            else if (attackCooldown <= 0)
-            {
-                attacking = false;
-                attackCollider.enabled = false;
-                attackCooldown = 0.5f;
-            }
+           // Attack();
         }
-       
+
+        //When attacking, if the cooldown is active, subtract from the attackCooldown
+        if (attackCooldown > 0)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+
+        //If the cooldown is over, allow players to attack again.
+        else if(attackCooldown <= 0)
+        {
+            attacking = false;
+            attackCollider.enabled = false;
+            attackCooldown = 0.5f;
+        }
     }
 
 
@@ -71,12 +63,16 @@ public class PlayerAttack : MonoBehaviour
     {
         if(other.gameObject.name == "Player2")
         {
-            Debug.Log("Player 2 was hit!");
             attackTarget = other.gameObject;
             targetRD2D = other.GetComponent<Rigidbody2D>();
+            Debug.Log("Player 2 was hit!");
             var dirrection = attackTarget.transform.position - this.transform.position;
             targetRD2D.AddForce(dirrection * KBforce);
+
         }
     }
+            
+        
+    
 }
 

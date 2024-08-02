@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -9,6 +11,7 @@ public class Player1Moneybag : MonoBehaviour
 
     //VARIABLES//
     private float curveAnimation;
+    private Vector2 coinPot;
 
     //Reference to Player 1 
     private GameObject player1;
@@ -19,6 +22,8 @@ public class Player1Moneybag : MonoBehaviour
     void Start()
     {
         player1 = GameObject.Find("Player1");
+
+        coinPot = new Vector2(-2, -4.75f);
     }
 
     //Move the moneybag relative to the player's movement 
@@ -27,6 +32,7 @@ public class Player1Moneybag : MonoBehaviour
         //If Player 1 is still holding onto the Moneybag, ensure the Moneybag moves relative to the Player.
         if(this.gameObject.transform.parent != null)
         {
+            Debug.Log("Moneybag Follow");
             //Set the moneyBagPosition Vector2 to the player's current movement + an offset. 
             moneyBagPosition = new Vector2(player1.transform.position.x, player1.transform.position.y + 1);
 
@@ -39,13 +45,24 @@ public class Player1Moneybag : MonoBehaviour
         //Set its transform position to be in an arc. 
         else if(this.gameObject.transform.parent == null)
         {
+            Debug.Log("Moneybag Throw");
             curveAnimation += Time.deltaTime;
 
             curveAnimation = curveAnimation % 1;
 
-            transform.position = MathParabola.Parabola2D(moneyBagPosition, Vector3.forward * 10, 1f, curveAnimation / 1f);
+            transform.position = MathParabola.Parabola2D(moneyBagPosition, coinPot, 1f, curveAnimation / 1f);
         }
 
 
+        
+
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Player 1 Pot")
+        {
+            Debug.Log("Hit barrel");
+            Destroy(this.gameObject);
+        }
     }
 }
