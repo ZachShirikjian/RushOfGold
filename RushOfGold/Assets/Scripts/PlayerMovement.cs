@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //REFERENCES//
-    private Rigidbody2D rb2D;
+    //VARIABLES//
     public float MoveSpeed = 2f;
     public float JumpPower = 2f;
     private Vector2 p1x;
     public bool isGrounded;
     private float movement;
     private bool IsFacingRight = true;
-
     public bool pickedUp = false;
 
     //REFERENCES//
+    private Rigidbody2D rb2D;
+
     //Reference to the Moneybag prefab 
     public GameObject moneyBag;
 
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+
         if (Input.GetKey(KeyCode.A))
         {
             movement = -1;

@@ -2243,6 +2243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.5
+  canAttack: 0
   attacking: 0
   KBforce: 2
 --- !u!1 &1096998757
@@ -2628,7 +2629,7 @@ Transform:
   m_GameObject: {fileID: 1211752894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2659,7 +2660,7 @@ Transform:
   m_GameObject: {fileID: 1265078359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.47, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3964,6 +3965,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
+      propertyPath: moneyBag
+      value: 
+      objectReference: {fileID: 8155672721743743960, guid: 686b823c4c27ded40a24bf2df103874b, type: 3}
+    - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: JumpPower
       value: 5
       objectReference: {fileID: 0}
@@ -3971,6 +3976,10 @@ PrefabInstance:
       propertyPath: isGrounded
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2275968392746593734, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
+      propertyPath: moneyBagSpawnPos
+      value: 
+      objectReference: {fileID: 1211752895}
     - target: {fileID: 6187390218430544594, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_Name
       value: Player2

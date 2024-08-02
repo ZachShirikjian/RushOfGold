@@ -5,18 +5,36 @@ using UnityEngine.Rendering;
 
 public class Player2Movement : MonoBehaviour
 {
-    private Rigidbody2D rb2DTwo;
+    //VARIABLES//
     public float MoveSpeed = 2f;
     public float JumpPower = 2f;
     private Vector2 p2x;
     public bool isGrounded;
     private float movement;
     private bool IsFacingRight = true;
+    public bool pickedUp = false;
+
+    //REFERENCES//
+    private Rigidbody2D rb2DTwo;
+
+    //Reference to the Moneybag prefab 
+    public GameObject moneyBag;
+
+    //Spawn Position of the Moneybag 
+    public Transform moneyBagSpawnPos;
+
+    //Reference to the Player1CoinWallet
+    private GameManager gm;
+
+    //Reference to the Attack script 
+    private Player2Attack playerAttackScript;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2DTwo = GetComponent<Rigidbody2D>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAttackScript = GetComponentInChildren<Player2Attack>();
     }
 
     private void FixedUpdate()
@@ -27,6 +45,29 @@ public class Player2Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If you have at least 10 coins and press the Q button
+        //Spawn the Moneybag 
+        if (gm.p2CoinWallet >= 1)
+        {
+            if (Input.GetKeyDown(KeyCode.O) && pickedUp == false)
+            {
+                Debug.Log("Spawn Moneybag");
+                Instantiate(moneyBag, moneyBagSpawnPos);
+                pickedUp = true;
+                playerAttackScript.canAttack = false;
+            }
+            //If you've already picked up a Moneybag, 
+            //Throw it and reset your coins.
+            else if (Input.GetKeyDown(KeyCode.O) && pickedUp == true)
+            {
+                Debug.Log("Throw moneyBag");
+                gm.p1CoinWallet = 0;
+                pickedUp = false;
+                playerAttackScript.canAttack = true;
+            }
+
+        }
+
         if (Input.GetKey(KeyCode.J))
         {
             movement = -1;

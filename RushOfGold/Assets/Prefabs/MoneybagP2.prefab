@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7320317158810621194}
   - component: {fileID: 2704697891482820033}
   - component: {fileID: 2647304169140878917}
-  - component: {fileID: 5461446700715492027}
+  - component: {fileID: -6512125293583882383}
   m_Layer: 0
-  m_Name: Moneybag
+  m_Name: MoneybagP2
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &5461446700715492027
+--- !u!114 &-6512125293583882383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8155672721743743960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489570581e4470647b91094897e8cbcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 197034361efdf5746b8c43e71577063c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
