@@ -117,9 +117,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4505277645912859171, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_TagString
       value: P2 Attack Hitbox
+=======
+    - target: {fileID: 7651622254547964729, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Color.b
@@ -175,6 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3997003647148497258, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+    - {fileID: 7651622254547964729, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
@@ -184,6 +191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2275968392746593734}
+    - targetCorrespondingSourceObject: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5175856986269614609}
   m_SourcePrefab: {fileID: 100100000, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
 --- !u!4 &849035878573567895 stripped
 Transform:
@@ -211,3 +221,17 @@ MonoBehaviour:
   MoveSpeed: 5
   JumpPower: 5
   isGrounded: 1
+--- !u!114 &-5175856986269614609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187390218430544594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbec78f1c41e1b48b2ab2f9d9a4c7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.5
+  attacking: 0
