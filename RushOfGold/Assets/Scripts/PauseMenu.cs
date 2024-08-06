@@ -11,13 +11,20 @@ public class PauseMenu : MonoBehaviour
 
     //REFERENCES//
     public GameObject controlsMenu;
+    private GameManager gm; 
 
     // Start is called before the first frame update
     void Start()
     {
         controlsMenu.SetActive(false);
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    //Calls the GameManager's Pause() method to Resume the game if already paused.
+    public void ResumeGame()
+    {
+        gm.PauseGame();
+    }
 
     //Returns players back to the title screen (Quit in the Pause Menu)
     public void ReturnToTitle()

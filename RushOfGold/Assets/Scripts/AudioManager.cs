@@ -5,7 +5,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     //REFERENCES TO SFX USED IN OUR GAME//
-    public AudioClip coinCollect; 
+    public AudioClip coinCollect;
+    public AudioClip UIHover;
+    public AudioClip UIClick;
 
     //REFERENCES TO MUSIC USED IN OUR GAME//
     public AudioClip level1Theme;

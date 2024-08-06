@@ -10,6 +10,7 @@ public class TitleScreen : MonoBehaviour
 {
     //REFERENCES//
     public GameObject ControlsMenu; //Menu for displaying controls to players 
+    public GameObject creditsPanel; //Menu for showing the credits of the game
 
     // Start is called before the first frame update
     void Start()
