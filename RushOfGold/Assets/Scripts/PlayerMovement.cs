@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 //Instantiates a Moneybag prefab at the money bag spawn position as a child of the Player
                 //Spawns a new Money Bag GameObject to allow its prefab to be separated from the Player transform. 
                 newMoneyBag = Instantiate(moneyBag, moneyBagSpawnPos);
-
+                newMoneyBag.GetComponent<Player1Moneybag>().numCoins = gm.p1CoinWallet;
                 pickedUp = true;
                 playerAttackScript.canAttack = false;
             }

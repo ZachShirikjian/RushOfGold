@@ -22,6 +22,11 @@ public class CoinBarrelCounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //If Player 1's Moneybag touches this goal (if the GameObject is Moneybag) 
+
+        //If Player 2's Moneybag touches this goal (if the GameObject is MoneybagP2)
+        //Increase the p1CoinBarrel amount by the coinAmount from the Moneybag prefab 
+
         if (collision.gameObject.CompareTag("Moneybag"))
         {
             // read how many coins are in the moneybag and add that to the barrel's coin amount  
