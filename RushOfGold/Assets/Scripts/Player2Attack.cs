@@ -16,10 +16,6 @@ public class Player2Attack : MonoBehaviour
     public bool attacking; //Bool checking if you're currently attacking or not 
     //REFERENCES// 
     private BoxCollider2D attackCollider;
-<<<<<<< Updated upstream
-=======
-    private Vector2 dirrection;
->>>>>>> Stashed changes
     private GameObject attackTarget;
     private Rigidbody2D targetRD2D;
 
@@ -66,21 +62,11 @@ public class Player2Attack : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player1")
-<<<<<<< Updated upstream
         {
             attackTarget = other.gameObject;
             targetRD2D = other.GetComponent<Rigidbody2D>();
             Debug.Log("Player 1 was hit!");
             var dirrection = attackTarget.transform.position - this.transform.position;
-=======
-        {   
-            Debug.Log("Player 1 was hit!");
-            attackTarget = other.gameObject;
-            targetRD2D = other.GetComponent<Rigidbody2D>();
-            dirrection = attackTarget.transform.position - this.transform.position;
-            dirrection.y += 2f;
-            dirrection.x = dirrection.x * 2f;
->>>>>>> Stashed changes
             targetRD2D.AddForce(dirrection * KBforce);
 
         }
