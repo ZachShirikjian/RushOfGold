@@ -602,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ControlsMenu: {fileID: 1341876173}
+  creditsPanel: {fileID: 0}
 --- !u!114 &557939878
 MonoBehaviour:
   m_ObjectHideFlags: 0
