@@ -271,6 +271,10 @@ MonoBehaviour:
   attackCooldown: 0.5
   KBforce: 10000
   attacking: 0
+<<<<<<< Updated upstream
+=======
+  KBforce: 5
+>>>>>>> Stashed changes
 --- !u!61 &4448745189707876431
 BoxCollider2D:
   m_ObjectHideFlags: 0
