@@ -34,7 +34,16 @@ public class Coin : MonoBehaviour
         {
             if(other.gameObject.name == "Player1")
             {
-                gm.p1CoinWallet++;
+                if(other.gameObject.GetComponent<PlayerMovement>().pickedUp == false)
+                {
+                    gm.p1CoinWallet++;
+                }
+
+                else
+                {
+                    Debug.Log("OH NO I CAN'T GET MORE COIN");
+                }
+
                 //Play the Coin Collect SFX at the spot where the player collected the coin itself 
                 AudioSource.PlayClipAtPoint(coinCollect, transform.position);
                 gameObject.SetActive(false);
@@ -42,7 +51,19 @@ public class Coin : MonoBehaviour
             }
             else if(other.gameObject.name == "Player2")
             {
-                gm.p2CoinWallet++;
+                if (other.gameObject.GetComponent<Player2Movement>().pickedUp == false)
+                {
+                    gm.p2CoinWallet++;
+                }
+
+                else
+                {
+                    Debug.Log("OH NO I CAN'T GET MORE COIN");
+                }
+
+                //Play the Coin Collect SFX at the spot where the player collected the coin itself 
+                AudioSource.PlayClipAtPoint(coinCollect, transform.position);
+                gameObject.SetActive(false);
                 Destroy(this.gameObject);
             }
         }
