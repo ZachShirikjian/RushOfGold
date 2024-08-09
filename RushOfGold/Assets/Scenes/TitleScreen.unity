@@ -1285,6 +1285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3197881732450203849, guid: 106925c8b59a00a4c9b6e4446f9a0448, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061114827289182899, guid: 106925c8b59a00a4c9b6e4446f9a0448, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
