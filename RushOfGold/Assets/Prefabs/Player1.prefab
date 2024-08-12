@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: -83060975063014691}
   - component: {fileID: 3662642308698442170}
   - component: {fileID: 3997003647148497258}
+  - component: {fileID: 4904345397589769212}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -210,6 +211,27 @@ MonoBehaviour:
   pickedUp: 0
   moneyBag: {fileID: 0}
   moneyBagSpawnPos: {fileID: 0}
+--- !u!95 &4904345397589769212
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943559768796015554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 598dd5a579914d547ae888b2f910223b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4505277645912859171
 GameObject:
   m_ObjectHideFlags: 0
