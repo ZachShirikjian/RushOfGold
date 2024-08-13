@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.5
+  canAttack: 0
   attacking: 0
   KBforce: 2000
 --- !u!61 &5270779403492118304
@@ -80,7 +81,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0}
+  m_Offset: {x: 1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -101,6 +102,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -83060975063014691, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -83060975063014691, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Size.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Name
       value: Player2
@@ -121,21 +130,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4904345397589769212, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d51e7bb2498f5d945a4758baad6628ad, type: 2}
     - target: {fileID: 5761956406350004981, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bad50992bf047e145b29e52134aa8df2, type: 3}
+    - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Color.b
-      value: 0.9528302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Color.g
-      value: 0.2546989
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8087565035644256754, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8561280488264744583, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,3 +231,6 @@ MonoBehaviour:
   MoveSpeed: 5
   JumpPower: 5
   isGrounded: 1
+  pickedUp: 0
+  moneyBag: {fileID: 0}
+  moneyBagSpawnPos: {fileID: 0}

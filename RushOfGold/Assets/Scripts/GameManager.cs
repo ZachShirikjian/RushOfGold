@@ -48,6 +48,12 @@ public class GameManager : MonoBehaviour
 
   //  private UIHandler uiScript; //script to handle the UI components 
 
+  //REFERENCE TO AUDIOMANAGER SCRIPT FOR GETTING SFX & MUSIC CLIPS//
+    public AudioManager audioManager; 
+
+  //REFERENCE TO THE MUSIC AUDIO SOURCE FOR PLAYING MUSIC//
+    private AudioSource musicSource; 
+    private AudioSource sfxSource;
 
     //Reset the Values of each Player's Coins & Lives, & Timer
     //Reference the UI script & begin handling UI aspects
@@ -73,6 +79,9 @@ public class GameManager : MonoBehaviour
         timeRunning = false;
         gamePaused = false;
         pauseMenu.SetActive(false);
+
+        musicSource = GameObject.Find("MusicSource").GetComponent<AudioSource>();
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         //StartCoroutine(GameTimer());
        // StartCountdown();
     }
@@ -145,6 +154,10 @@ public class GameManager : MonoBehaviour
         timeRunning = true;
         p1Script.enabled = true;
         p2Script.enabled = true;
+
+        //Plays the Level 1 theme of our game 
+        musicSource.PlayOneShot(audioManager.level1Theme);
+
         for (int i = timeRemaining; i > 0; i--)
         {
             if(timeRunning == true)

@@ -12,7 +12,10 @@ public class Player2Moneybag : MonoBehaviour
     private GameObject player2;
 
     //Vector 2 for the Money bag position to spawn the Moneybag above the Player's Head. 
-    private Vector2 moneyBagPosition; 
+    private Vector2 moneyBagPosition;
+
+    //The number of coins inside this Moneybag, changes when spawned
+    public int numCoins;
 
     void Start()
     {

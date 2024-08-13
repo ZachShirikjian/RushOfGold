@@ -22,6 +22,8 @@ public class Player2Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attacking = false;
+        canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
         attackCollider.enabled = false;
     }

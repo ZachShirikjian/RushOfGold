@@ -10,6 +10,7 @@ public class TitleScreen : MonoBehaviour
 {
     //REFERENCES//
     public GameObject ControlsMenu; //Menu for displaying controls to players 
+    public GameObject creditsPanel; //Menu for showing the credits of the game
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class TitleScreen : MonoBehaviour
     public void StartGame()
     {
         //When clicking START, load the Test Scene (temporary).
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Level1");
     }
 
     //Exits out of the game on click (in editor AND in builds).

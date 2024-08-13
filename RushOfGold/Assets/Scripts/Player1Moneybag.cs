@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+//using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player1Moneybag : MonoBehaviour
 {
@@ -17,8 +17,10 @@ public class Player1Moneybag : MonoBehaviour
     private GameObject player1;
 
     //Vector 2 for the Money bag position to spawn the Moneybag above the Player's Head. 
-    private Vector2 moneyBagPosition; 
+    private Vector2 moneyBagPosition;
 
+    //The number of coins inside this Moneybag, changes when spawned
+    public int numCoins; 
     void Start()
     {
         player1 = GameObject.Find("Player1");

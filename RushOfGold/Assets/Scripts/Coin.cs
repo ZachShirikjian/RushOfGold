@@ -6,10 +6,14 @@ public class Coin : MonoBehaviour
 {
     //REFERENCES//
     private GameManager gm; //Reference to GameManager for adjusting score of P1/P2 coins 
+    //private AudioSource audioSource; //Reference to the Audio Source on the Coin GameObject 
+    public AudioClip coinCollect; //Audio clip we want to play when players collect coins 
+
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //audioSource = GetComponent<AudioSource>();
 
         //Destroys coins after 3 seconds to de-spawn them.
         Destroy(this.gameObject, 3f);
@@ -30,12 +34,36 @@ public class Coin : MonoBehaviour
         {
             if(other.gameObject.name == "Player1")
             {
-                gm.p1CoinWallet++;
+                if(other.gameObject.GetComponent<PlayerMovement>().pickedUp == false)
+                {
+                    gm.p1CoinWallet++;
+                }
+
+                else
+                {
+                    Debug.Log("OH NO I CAN'T GET MORE COIN");
+                }
+
+                //Play the Coin Collect SFX at the spot where the player collected the coin itself 
+                AudioSource.PlayClipAtPoint(coinCollect, transform.position);
+                gameObject.SetActive(false);
                 Destroy(this.gameObject);
             }
             else if(other.gameObject.name == "Player2")
             {
-                gm.p2CoinWallet++;
+                if (other.gameObject.GetComponent<Player2Movement>().pickedUp == false)
+                {
+                    gm.p2CoinWallet++;
+                }
+
+                else
+                {
+                    Debug.Log("OH NO I CAN'T GET MORE COIN");
+                }
+
+                //Play the Coin Collect SFX at the spot where the player collected the coin itself 
+                AudioSource.PlayClipAtPoint(coinCollect, transform.position);
+                gameObject.SetActive(false);
                 Destroy(this.gameObject);
             }
         }
