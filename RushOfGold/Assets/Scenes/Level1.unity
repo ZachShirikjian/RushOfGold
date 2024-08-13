@@ -147,6 +147,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -83060975063014691, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2943559768796015554, guid: 2287440893a86b24eb0547c1692805ed, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -470,7 +474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3a8b4a119e14774ebe8be70b340f206, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a5e4ddf92bd6a64091535e9368c3ffe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -546,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3a8b4a119e14774ebe8be70b340f206, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a5e4ddf92bd6a64091535e9368c3ffe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1212,7 +1216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3a8b4a119e14774ebe8be70b340f206, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a5e4ddf92bd6a64091535e9368c3ffe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4256,7 +4260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3a8b4a119e14774ebe8be70b340f206, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a5e4ddf92bd6a64091535e9368c3ffe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5241,7 +5245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 279028456851452877, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.15625
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 849035878573567895, guid: 45e7d0463db7b4442aa419e4a48ec2d6, type: 3}
       propertyPath: m_LocalScale.x
