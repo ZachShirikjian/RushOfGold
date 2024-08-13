@@ -50,7 +50,7 @@ public class Player1Moneybag : MonoBehaviour
             Debug.Log("Moneybag Throw");
             curveAnimation += Time.deltaTime;
 
-            curveAnimation = curveAnimation % 1;
+            //curveAnimation = curveAnimation % 1;
 
             transform.position = MathParabola.Parabola2D(moneyBagPosition, coinPot, 1f, curveAnimation / 1f);
         }
