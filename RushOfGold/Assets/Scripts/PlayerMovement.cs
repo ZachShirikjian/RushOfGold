@@ -30,7 +30,10 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gm;
 
     //Reference to the Attack script 
-    private PlayerAttack playerAttackScript; 
+    private PlayerAttack playerAttackScript;
+
+    //Reference to Animator 
+    private Animator anim; 
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAttackScript = GetComponentInChildren<PlayerAttack>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -80,21 +84,25 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             movement = -1;
+            anim.SetBool("isWalking", true);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             movement = 1;
+            anim.SetBool("isWalking", true);
         }
 
         if (Input.GetKeyUp(KeyCode.A))
         {
             movement = 0;
+            anim.SetBool("isWalking", false);
         }
 
         if (Input.GetKeyUp(KeyCode.D))
         {
             movement = 0;
+            anim.SetBool("isWalking", false);
         }
 
         //Jump and Attack controls for Player 1

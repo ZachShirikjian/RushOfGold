@@ -14,6 +14,7 @@ public class Player2Attack : MonoBehaviour
     public float attackCooldown = 0.5f;
     public float KBforce;
     public bool attacking; //Bool checking if you're currently attacking or not 
+    public bool canAttack = true;
     //REFERENCES// 
     private BoxCollider2D attackCollider;
     private GameObject attackTarget;

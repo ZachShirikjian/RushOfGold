@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackCooldown = 0.5f;
     public float KBforce;
     public bool attacking; //Bool checking if you're currently attacking or not 
+    public bool canAttack = false;
     //REFERENCES// 
     private BoxCollider2D attackCollider;
     private GameObject attackTarget;
@@ -22,6 +23,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attacking = false;
+        canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
         attackCollider.enabled = false;
     }
