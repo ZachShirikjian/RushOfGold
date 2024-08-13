@@ -28,7 +28,7 @@ public class TitleScreen : MonoBehaviour
     public void StartGame()
     {
         //When clicking START, load the Test Scene (temporary).
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Level1");
     }
 
     //Exits out of the game on click (in editor AND in builds).
