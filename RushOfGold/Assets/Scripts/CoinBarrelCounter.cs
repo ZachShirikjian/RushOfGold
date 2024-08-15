@@ -13,6 +13,7 @@ public class CoinBarrelCounter : MonoBehaviour
     void Start()
     {
         coinAmount = 0;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class CoinBarrelCounter : MonoBehaviour
 
             //Set the P1CoinBarrel amount to the Number of Coins in Player 1's Moneybag
             gm.p1CoinBarrel += collision.gameObject.GetComponent<Player1Moneybag>().numCoins;
+            Destroy(collision.gameObject);
         }
 
         //If Player 2's Moneybag touches this goal (if the GameObject is MoneybagP2)
@@ -39,6 +41,7 @@ public class CoinBarrelCounter : MonoBehaviour
             // Read how many coins are in the moneybag and add that to the barrel's coin amount
             //Set the P2CoinBarrel amount to the Number of Coins in Player 2's Moneybag
             gm.p2CoinBarrel += collision.gameObject.GetComponent<Player2Moneybag>().numCoins;
+            Destroy(collision.gameObject);
 
         }
     }

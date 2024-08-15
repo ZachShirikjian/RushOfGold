@@ -5463,6 +5463,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246475811304470441, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7270127602953303766, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -5483,6 +5507,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8607640925208397553, guid: ca5d87323cb06b142b68b7c2d45e1b33, type: 3}
+      propertyPath: CoinDisplay
+      value: 
+      objectReference: {fileID: 1742383040}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5496,6 +5524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2750587886538596453, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: CoinDisplay
+      value: 
+      objectReference: {fileID: 781575156}
     - target: {fileID: 3872207573788807234, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -5583,6 +5615,30 @@ PrefabInstance:
     - target: {fileID: 8485218609721103213, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959271818724249917, guid: a0c6fc22663880d4db59cf96e2119308, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
