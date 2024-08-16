@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     //private Canvas canvas;
 
     //UI REFERENCES//
-    public GameObject pauseMenu;    //Reference to the Pause Menu
+    public GameObject pauseMenu; //Reference to the Pause Menu
+    public GameObject GameWin; //Reference to the Win Screen
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         timeRunning = false;
         gamePaused = false;
         pauseMenu.SetActive(false);
+        GameWin.SetActive(false);
 
         musicSource = GameObject.Find("MusicSource").GetComponent<AudioSource>();
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
@@ -195,6 +197,7 @@ public class GameManager : MonoBehaviour
 
         p1Script.enabled = false;
         p2Script.enabled = false;
+
     }
 
     //Check the Scores between Player 1 and Player 2 if time goes to 0 
@@ -205,6 +208,7 @@ public class GameManager : MonoBehaviour
         if(p1CoinBarrel > p2CoinBarrel)
         {
             Debug.Log("Player 1 Wins!");
+            Player1Win();
         }
 
         //If Player 2 has more coins in their barrel than Player 1
@@ -212,6 +216,7 @@ public class GameManager : MonoBehaviour
         else if (p2CoinBarrel > p1CoinBarrel)
         {
             Debug.Log("Player 2 Wins!");
+            Player2Win();
         }
 
         //If the Coin Barrel amounts between both players match 
@@ -219,6 +224,7 @@ public class GameManager : MonoBehaviour
         else if(p1CoinBarrel == p2CoinBarrel)
         {
             Debug.Log("DRAW");
+            Draw();
         }
     }
 
@@ -281,5 +287,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Player1Win()
+    {
+     
+    }
+
+    public void Player2Win()
+    {
+
+    }
+
+    public void Draw()
+    {
+        
+    }
     //Update the Coin Wallet for P1/P2 & ensure their max is only 10 at a time 
 }
