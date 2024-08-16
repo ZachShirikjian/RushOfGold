@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     //UI REFERENCES//
     public GameObject pauseMenu; //Reference to the Pause Menu
     public GameObject GameWin; //Reference to the Win Screen
+    public TextMeshPro WinnerText;
     public TextMeshProUGUI timerText; 
     public TextMeshProUGUI countdownTimer;
 
@@ -289,17 +290,17 @@ public class GameManager : MonoBehaviour
 
     public void Player1Win()
     {
-     
+        WinnerText.text = "Player 1 Wins";
     }
 
     public void Player2Win()
     {
-
+        WinnerText.text = "Player 2 Wins";
     }
 
     public void Draw()
     {
-        
+        WinnerText.text = "Draw";
     }
     //Update the Coin Wallet for P1/P2 & ensure their max is only 10 at a time 
 }
