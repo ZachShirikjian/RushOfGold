@@ -138,13 +138,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 3; i >= 0; i--)
         {
-            if(i > 0)
+            yield return new WaitForSeconds(1f);
+            if (i > 0)
             {
-                yield return new WaitForSeconds(1f);
                 countdownTimer.text = i.ToString();
             }
-            
-            if (i <= 0)
+
+            else if (i <= 0)
             {
                 countdownTimer.text = "GO!";
                 yield return new WaitForSeconds(0.5f);

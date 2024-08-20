@@ -15,7 +15,9 @@ public class Player2Attack : MonoBehaviour
     public float KBforce;
     public bool attacking; //Bool checking if you're currently attacking or not 
     public bool canAttack = true;
+
     //REFERENCES// 
+    private Animator anim; 
     private BoxCollider2D attackCollider;
     private GameObject attackTarget;
     private Rigidbody2D targetRD2D;
@@ -26,6 +28,7 @@ public class Player2Attack : MonoBehaviour
         attacking = false;
         canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
         attackCollider.enabled = false;
     }
 
@@ -39,8 +42,9 @@ public class Player2Attack : MonoBehaviour
         {
             attacking = true;
             attackCollider.enabled = true;
+            anim.SetTrigger("Attacking");
 
-           // Attack();
+            // Attack();
         }
 
         //When attacking, if the cooldown is active, subtract from the attackCooldown
@@ -67,6 +71,7 @@ public class Player2Attack : MonoBehaviour
         if(other.gameObject.name == "Player1")
         {
             attackTarget = other.gameObject;
+            other.gameObject.GetComponent<Animator>().SetTrigger("TakingDamage");
             targetRD2D = other.GetComponent<Rigidbody2D>();
             Debug.Log("Player 1 was hit!");
             var dirrection = attackTarget.transform.position - this.transform.position;

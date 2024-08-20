@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
+    private GameManager gm;     //Reference to GameManager 
     public GameObject Coin; //coinprefab
     public float spawnInterval = 2.0f; // Time interval between spawns
     public float spawnAreaMinX = -10.0f; // Minimum X position for spawning
@@ -13,12 +14,14 @@ public class CoinSpawner : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(SpawnCoins());
     }
 
+    //Spawn coins only when the Game Timer is Running! 
     IEnumerator SpawnCoins()
     {
-        while (true)
+        while (true && gm.timeRunning == true)
         {
             SpawnCoin();
             yield return new WaitForSeconds(spawnInterval);

@@ -15,10 +15,12 @@ public class PlayerAttack : MonoBehaviour
     public float KBforce;
     public bool attacking; //Bool checking if you're currently attacking or not 
     public bool canAttack = false;
+
     //REFERENCES// 
     private BoxCollider2D attackCollider;
     private GameObject attackTarget;
     private Rigidbody2D targetRD2D;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         attacking = false;
         canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponentInParent<Animator>();
         attackCollider.enabled = false;
     }
 
@@ -39,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
         {
             attacking = true;
             attackCollider.enabled = true;
-
+            anim.SetTrigger("Attacking");
            // Attack();
         }
 
@@ -62,11 +65,14 @@ public class PlayerAttack : MonoBehaviour
 
     //If Player 1's trigger collider touches Player 2,
     //Call the Player 2 method to be knocked back. 
+
+    //Trigger Player 2's Animator so the TakingDamage animation plays when taking damage. 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player2")
         {
             attackTarget = other.gameObject;
+            other.gameObject.GetComponent<Animator>().SetTrigger("TakingDamage");
             targetRD2D = other.GetComponent<Rigidbody2D>();
             Debug.Log("Player 2 was hit!");
             var dirrection = attackTarget.transform.position - this.transform.position;

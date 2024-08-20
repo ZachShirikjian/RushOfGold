@@ -5,7 +5,7 @@ using TMPro;
 
 public class CoinBarrelCounter : MonoBehaviour
 {
-    public TextMeshProUGUI CoinDisplay;
+    //public TextMeshProUGUI CoinDisplay;
     public int coinAmount;
     private GameManager gm;
 
@@ -19,7 +19,6 @@ public class CoinBarrelCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CoinDisplay.text = coinAmount.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
