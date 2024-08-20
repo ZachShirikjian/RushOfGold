@@ -54,10 +54,6 @@ public class Player1Moneybag : MonoBehaviour
 
             transform.position = MathParabola.Parabola2D(moneyBagPosition, coinPot, 1f, curveAnimation / 1f);
         }
-
-
-        
-
     }
     public void OnTriggerEnter2D(Collider2D other)
     {

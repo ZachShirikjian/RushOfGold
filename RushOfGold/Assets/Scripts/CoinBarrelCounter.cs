@@ -6,8 +6,8 @@ using TMPro;
 public class CoinBarrelCounter : MonoBehaviour
 {
     public TextMeshProUGUI CoinDisplay;
-    public int coinAmount; 
-    private GameManager gm; 
+    public int coinAmount;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()

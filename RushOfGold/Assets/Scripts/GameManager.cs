@@ -26,9 +26,15 @@ public class GameManager : MonoBehaviour
     //UI REFERENCES//
     public GameObject pauseMenu; //Reference to the Pause Menu
     public GameObject GameWin; //Reference to the Win Screen
-    public TextMeshPro WinnerText;
-    public TextMeshProUGUI timerText; 
-    public TextMeshProUGUI countdownTimer;
+    public TextMeshProUGUI WinnerText; //Reference to the text displaying the Winner of the game (P1 or P2)
+    public Image winScreen; //Reference to the Win Screen Image 
+    public Sprite p1WinScreen; //Reference to Player 1 Win Screen Image 
+    public Sprite p2WinScreen; //Reference to Player 2 Win Screen Image 
+    public Sprite tieWinScreen; //Reference to Tie Win Screen Image
+    public TextMeshProUGUI p1FinalCoins;
+    public TextMeshProUGUI p2FinalCoins; 
+    public TextMeshProUGUI timerText; //text displaying the # of seconds left before time runs out. 
+    public TextMeshProUGUI countdownTimer; //text displaying the 3, 2, 1, GO countdown timer
 
     //Coin Wallet UI for P1/P2
     public TextMeshProUGUI p1CoinWalletText;
@@ -288,19 +294,38 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //When Player 1 Wins,
+    //Display Player 1 Wins on screen,
+    //And display the Player 1 Win Screen.
     public void Player1Win()
     {
-        WinnerText.text = "Player 1 Wins";
+        WinnerText.text = "Player 1 Wins!";
+        winScreen.gameObject.SetActive(true);
+        winScreen.sprite = p1WinScreen;
+        p1FinalCoins.text = p1CoinBarrel.ToString();
+        p2FinalCoins.text = p2CoinBarrel.ToString();
     }
 
+
+    //When Player 2 Wins,
+    //Display Player 2 Wins on screen,
+    //And display the Player 2 Win Screen.
     public void Player2Win()
     {
-        WinnerText.text = "Player 2 Wins";
+        WinnerText.text = "Player 2 Wins!";
+        winScreen.gameObject.SetActive(true);
+        winScreen.sprite = p2WinScreen;
+        p1FinalCoins.text = p1CoinBarrel.ToString();
+        p2FinalCoins.text = p2CoinBarrel.ToString();
     }
 
     public void Draw()
     {
         WinnerText.text = "Draw";
+        winScreen.gameObject.SetActive(true);
+        winScreen.sprite = tieWinScreen;
+        p1FinalCoins.text = p1CoinBarrel.ToString();
+        p2FinalCoins.text = p2CoinBarrel.ToString();
     }
     //Update the Coin Wallet for P1/P2 & ensure their max is only 10 at a time 
 }
