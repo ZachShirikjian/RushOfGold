@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3722dbb806d98d0418654fe73f2b838b
+guid: 393aaff2d5b05634e8079e5959f0bf3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_0
+      name: Applebeard_ThrowMoneybag_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c544a5439f60cff4eb1b983ec0870bcc
-      internalID: 1216119343
+      spriteID: 76b00422fde25684e9e5534f0e453de0
+      internalID: 2128774114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_1
+      name: Applebeard_ThrowMoneybag_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 48
         y: 0
-        width: 36
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c7b1736fdda993479a7c01a76d5937d
-      internalID: 15670463
+      spriteID: bb17deea92561da488fbb0657d0883b1
+      internalID: 1755346569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_2
+      name: Applebeard_ThrowMoneybag_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 96
         y: 0
-        width: 36
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,40 +179,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4002bd47cc50b445a6ee61c536eb120
-      internalID: -1587468504
+      spriteID: ca91224513ccc444890a7da67318efb9
+      internalID: 747043274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_3
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 0
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32848c95cd11a18419c8debd24dc74c3
-      internalID: 1558642484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Applebeard_WalkAnim_4
+      name: Applebeard_ThrowMoneybag_3
       rect:
         serializedVersion: 2
         x: 144
         y: 0
-        width: 36
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,8 +200,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b50fc5e676d59be4781c09cd942cffb5
-      internalID: 1957582810
+      spriteID: 7f501fffd455acd45bbab36e291b936a
+      internalID: -992409363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Applebeard_ThrowMoneybag_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626e0040aa5b14a4083d6c834b224bc8
+      internalID: -716204592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Applebeard_ThrowMoneybag_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16ebeaeeabe51441b4bebf14aaf5f6c
+      internalID: 1458392385
       vertices: []
       indices: 
       edges: []
@@ -238,11 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Applebeard_WalkAnim_0: 1216119343
-      Applebeard_WalkAnim_1: 15670463
-      Applebeard_WalkAnim_2: -1587468504
-      Applebeard_WalkAnim_3: 1558642484
-      Applebeard_WalkAnim_4: 1957582810
+      Applebeard_ThrowMoneybag_0: 2128774114
+      Applebeard_ThrowMoneybag_1: 1755346569
+      Applebeard_ThrowMoneybag_2: 747043274
+      Applebeard_ThrowMoneybag_3: -992409363
+      Applebeard_ThrowMoneybag_4: -716204592
+      Applebeard_ThrowMoneybag_5: 1458392385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

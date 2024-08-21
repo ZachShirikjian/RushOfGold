@@ -21,7 +21,7 @@ public class CoinSpawner : MonoBehaviour
     //Spawn coins only when the Game Timer is Running! 
     IEnumerator SpawnCoins()
     {
-        while (true && gm.timeRunning == true)
+        while (true)
         {
             SpawnCoin();
             yield return new WaitForSeconds(spawnInterval);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3722dbb806d98d0418654fe73f2b838b
+guid: 370570949d217f241838c8e36164cff9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_0
+      name: pixil-frame-0 (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c544a5439f60cff4eb1b983ec0870bcc
-      internalID: 1216119343
+      spriteID: 3aac1f88a30c88444a5e77d36e3ee447
+      internalID: 461436095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_1
+      name: pixil-frame-0 (1)_1
       rect:
         serializedVersion: 2
         x: 36
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c7b1736fdda993479a7c01a76d5937d
-      internalID: 15670463
+      spriteID: da80c2e50c23b3f4b8be713991d5feb8
+      internalID: -728062977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_2
+      name: pixil-frame-0 (1)_2
       rect:
         serializedVersion: 2
         x: 72
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4002bd47cc50b445a6ee61c536eb120
-      internalID: -1587468504
+      spriteID: 9277863c38b4493409c9bf75c83f24ae
+      internalID: 1705214138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_3
+      name: pixil-frame-0 (1)_3
       rect:
         serializedVersion: 2
         x: 108
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32848c95cd11a18419c8debd24dc74c3
-      internalID: 1558642484
+      spriteID: d110c27275a377d4a92b00f27397fb97
+      internalID: 1052326635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Applebeard_WalkAnim_4
+      name: pixil-frame-0 (1)_4
       rect:
         serializedVersion: 2
         x: 144
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b50fc5e676d59be4781c09cd942cffb5
-      internalID: 1957582810
+      spriteID: df01b86f6d521f54b88ee343f14f65a7
+      internalID: 1972421047
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Applebeard_WalkAnim_0: 1216119343
-      Applebeard_WalkAnim_1: 15670463
-      Applebeard_WalkAnim_2: -1587468504
-      Applebeard_WalkAnim_3: 1558642484
-      Applebeard_WalkAnim_4: 1957582810
+      pixil-frame-0 (1)_0: 461436095
+      pixil-frame-0 (1)_1: -728062977
+      pixil-frame-0 (1)_2: 1705214138
+      pixil-frame-0 (1)_3: 1052326635
+      pixil-frame-0 (1)_4: 1972421047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

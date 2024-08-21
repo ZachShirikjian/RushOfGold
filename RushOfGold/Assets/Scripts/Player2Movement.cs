@@ -20,6 +20,9 @@ public class Player2Movement : MonoBehaviour
     //Reference to the Moneybag prefab 
     public GameObject moneyBag;
 
+    //The GameObject referencing the clone of the Moneybag spawning in 
+    private GameObject newMoneyBag;
+
     //Spawn Position of the Moneybag 
     public Transform moneyBagSpawnPos;
 
@@ -57,7 +60,11 @@ public class Player2Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O) && pickedUp == false)
             {
                 Debug.Log("Spawn Moneybag");
-                Instantiate(moneyBag, moneyBagSpawnPos);
+
+                //Instantiates a Moneybag prefab at the money bag spawn position as a child of the Player
+                //Spawns a new Money Bag GameObject to allow its prefab to be separated from the Player transform. 
+                newMoneyBag = Instantiate(moneyBag, moneyBagSpawnPos);
+                newMoneyBag.GetComponent<Player2Moneybag>().numCoins = gm.p2CoinWallet;
                 pickedUp = true;
                 playerAttackScript.canAttack = false;
             }
@@ -66,7 +73,9 @@ public class Player2Movement : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.O) && pickedUp == true)
             {
                 Debug.Log("Throw moneyBag");
-                gm.p1CoinWallet = 0;
+                anim.SetTrigger("ThrowMoneybag");
+                newMoneyBag.transform.parent = null;
+                gm.p2CoinWallet = 0;
                 pickedUp = false;
                 playerAttackScript.canAttack = true;
             }

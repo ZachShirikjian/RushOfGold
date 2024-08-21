@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d045bbaebf08704fb0fe0d5f18dee65
+guid: 56617dfb38ac303489afd4fa7509610a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21e330aa7b2b8d84fb53be696e4c20ac
-      internalID: -2122826456
+      spriteID: 1f9ee308d11795f46a6fa775d49cb7a8
+      internalID: -1691314813
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68342213ac8060b4dae5ab16eeee64b7
-      internalID: -1946232405
+      spriteID: ef98b52bbd847184ba807044f6fe3103
+      internalID: -608157979
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37daaeba08bd5f74b90067785e752e99
-      internalID: 751413973
+      spriteID: 7ca0c0a221b8e6c43b968463d7c7e4c2
+      internalID: 705305459
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d48c7eabfdb96e44bbeb1dc0dcf7ece2
-      internalID: -1430945396
+      spriteID: 4473a3e90f9c8044eb85c6ec3d8b9d02
+      internalID: 1858392145
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15ffba388eceeff41b0bbec9d69cdf90
-      internalID: 634179501
+      spriteID: cc93280461b28bf47b0c0de66d5f9644
+      internalID: -1033818969
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Berrybeard_WalkAnim_0: -2122826456
-      Berrybeard_WalkAnim_1: -1946232405
-      Berrybeard_WalkAnim_2: 751413973
-      Berrybeard_WalkAnim_3: -1430945396
-      Berrybeard_WalkAnim_4: 634179501
+      Berrybeard_WalkAnim_0: -1691314813
+      Berrybeard_WalkAnim_1: -608157979
+      Berrybeard_WalkAnim_2: 705305459
+      Berrybeard_WalkAnim_3: 1858392145
+      Berrybeard_WalkAnim_4: -1033818969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

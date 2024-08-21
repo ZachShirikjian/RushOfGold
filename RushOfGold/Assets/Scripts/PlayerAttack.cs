@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //Enables the player to attack when pressing their respective key. 
         //After the cooldown ends, allow the player to attack again. 
-        if (Input.GetKeyDown(KeyCode.F) && !attacking && attackCooldown > 0)
+        if (Input.GetKeyDown(KeyCode.F) && !attacking && canAttack && attackCooldown > 0)
         {
             attacking = true;
             attackCollider.enabled = true;

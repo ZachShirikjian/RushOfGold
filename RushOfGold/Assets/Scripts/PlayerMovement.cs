@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Q) && pickedUp == true)
             {
                 Debug.Log("Throw moneyBag");
+                anim.SetTrigger("ThrowMoneybag");
                 newMoneyBag.transform.parent = null;
                 gm.p1CoinWallet = 0;
                 pickedUp = false;
