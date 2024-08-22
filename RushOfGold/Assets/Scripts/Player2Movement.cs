@@ -73,6 +73,7 @@ public class Player2Movement : MonoBehaviour
                 newMoneyBag.GetComponent<Player2Moneybag>().numCoins = gm.p2CoinWallet;
                 pickedUp = true;
                 playerAttackScript.canAttack = false;
+                sfxSource.PlayOneShot(audioManager.moneybagSpawn);
             }
             //If you've already picked up a Moneybag, 
             //Throw it and reset your coins.
@@ -80,6 +81,7 @@ public class Player2Movement : MonoBehaviour
             {
                 Debug.Log("Throw moneyBag");
                 anim.SetTrigger("ThrowMoneybag");
+                sfxSource.PlayOneShot(audioManager.moneybagSpawn);
                 newMoneyBag.transform.parent = null;
                 gm.p2CoinWallet = 0;
                 pickedUp = false;

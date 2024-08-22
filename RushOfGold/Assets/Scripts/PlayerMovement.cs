@@ -73,15 +73,17 @@ public class PlayerMovement : MonoBehaviour
                 newMoneyBag.GetComponent<Player1Moneybag>().numCoins = gm.p1CoinWallet;
                 pickedUp = true;
                 playerAttackScript.canAttack = false;
+                sfxSource.PlayOneShot(audioManager.moneybagSpawn);
             }
             //If you've already picked up a Moneybag, 
             //Throw it and reset your coins.
-            
+
             //Detach it from the Player so the arc doesn't change with player movement.
             else if (Input.GetKeyDown(KeyCode.Q) && pickedUp == true)
             {
                 Debug.Log("Throw moneyBag");
                 anim.SetTrigger("ThrowMoneybag");
+                sfxSource.PlayOneShot(audioManager.moneybagThrow);
                 newMoneyBag.transform.parent = null;
                 gm.p1CoinWallet = 0;
                 pickedUp = false;

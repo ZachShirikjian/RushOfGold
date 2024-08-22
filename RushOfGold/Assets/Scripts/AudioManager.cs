@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip koSFX;
     public AudioClip playerJump;
     public AudioClip playerPunch;
+    public AudioClip moneybagThrow;
+    public AudioClip moneybagSpawn;
     public AudioClip takingDamage;
     public AudioClip coinCollect;
     public AudioClip barrelGoal;
