@@ -22,14 +22,22 @@ public class Player2Attack : MonoBehaviour
     private GameObject attackTarget;
     private Rigidbody2D targetRD2D;
 
+    //Reference to AudioManager
+    private AudioManager audioManager;
+
+    //Reference to SFXSource
+    private AudioSource sfxSource;
+
     // Start is called before the first frame update
     void Start()
     {
         attacking = false;
         canAttack = true;
         attackCollider = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
         attackCollider.enabled = false;
+        audioManager = GameObject.Find("AudioSources").GetComponent<AudioManager>();
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,7 +51,7 @@ public class Player2Attack : MonoBehaviour
             attacking = true;
             attackCollider.enabled = true;
             anim.SetTrigger("Attacking");
-
+            sfxSource.PlayOneShot(audioManager.playerPunch);
             // Attack();
         }
 
@@ -72,6 +80,7 @@ public class Player2Attack : MonoBehaviour
         {
             attackTarget = other.gameObject;
             other.gameObject.GetComponent<Animator>().SetTrigger("TakingDamage");
+            sfxSource.PlayOneShot(audioManager.takingDamage);
             targetRD2D = other.GetComponent<Rigidbody2D>();
             Debug.Log("Player 1 was hit!");
             var dirrection = attackTarget.transform.position - this.transform.position;

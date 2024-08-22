@@ -2004,7 +2004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4338,6 +4338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053a99f5709fa44cbe770db33544f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownBEEP: {fileID: 8300000, guid: 6e0019101535d8242b2f326d8547050d, type: 3}
+  countdownGO: {fileID: 8300000, guid: 177ce0378517e3644894e44f6bd6d395, type: 3}
+  timesUp: {fileID: 8300000, guid: 1b67770c686e59741ae4a6d7388bf20b, type: 3}
+  koSFX: {fileID: 8300000, guid: 832ff4673aa041b48954b0df497d27b2, type: 3}
+  playerJump: {fileID: 8300000, guid: 7db8e97292fe8ca46865f6471cff2319, type: 3}
+  playerPunch: {fileID: 8300000, guid: 452cd3fa2aa63d94aa31696e1763bdfc, type: 3}
+  takingDamage: {fileID: 8300000, guid: 9d36214c3dee88a4b838b0339edea85b, type: 3}
   coinCollect: {fileID: 8300000, guid: 29e733fb36afd6f4b8e075f107fd8006, type: 3}
   UIHover: {fileID: 8300000, guid: f2ee74b985c0b904cbc22cbec67690d0, type: 3}
   UIClick: {fileID: 8300000, guid: 49dff43f47b21134899f899804e519e1, type: 3}

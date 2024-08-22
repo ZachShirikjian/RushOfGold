@@ -139,14 +139,17 @@ public class GameManager : MonoBehaviour
         for (int i = 3; i >= 0; i--)
         {
             yield return new WaitForSeconds(1f);
+            countdownTimer.text = "";
             if (i > 0)
             {
                 countdownTimer.text = i.ToString();
+                sfxSource.PlayOneShot(audioManager.countdownBEEP);
             }
 
             else if (i <= 0)
             {
                 countdownTimer.text = "GO!";
+                sfxSource.PlayOneShot(audioManager.countdownGO);
                 yield return new WaitForSeconds(0.5f);
                 countdownTimer.text = "";
                 StartCoroutine(GameTimer());
@@ -165,7 +168,7 @@ public class GameManager : MonoBehaviour
         p2Script.enabled = true;
 
         //Plays the Level 1 theme of our game 
-        musicSource.PlayOneShot(audioManager.level1Theme);
+        musicSource.Play();
 
         for (int i = timeRemaining; i > 0; i--)
         {
@@ -196,14 +199,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Stop the Timer, after 60 seconds have passed OR until a player loses all of their lives. 
+    //Stop the Timer, after 60 seconds have passed OR until a player loses all of their lives.
     public void StopTimer()
     {
         Debug.Log("Time's Up!");
+        sfxSource.PlayOneShot(audioManager.timesUp);
         timeRunning = false;
 
         p1Script.enabled = false;
         p2Script.enabled = false;
+        CheckScores();
 
     }
 
@@ -262,6 +267,7 @@ public class GameManager : MonoBehaviour
         {
             p1Lives--;
             p1LivesText.text = p1Lives.ToString();
+            sfxSource.PlayOneShot(audioManager.koSFX);
 
             if(p1Lives <= 0)
             {
@@ -280,7 +286,7 @@ public class GameManager : MonoBehaviour
         {
             p2Lives--;
             p2LivesText.text = p2Lives.ToString();
-
+            sfxSource.PlayOneShot(audioManager.koSFX);
             if (p2Lives <= 0)
             {
                 StopTimer();

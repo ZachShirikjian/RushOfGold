@@ -25,17 +25,20 @@ public class LevelBounds : MonoBehaviour
     //2 = Player 2 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(gm.timeRunning == true)
         {
-            Debug.Log(other.gameObject.name + " has lost a life.");
-            if(other.gameObject.name == "Player1")
+            if (other.gameObject.tag == "Player")
             {
-                gm.LoseLife(1);
-            }
+                Debug.Log(other.gameObject.name + " has lost a life.");
+                if (other.gameObject.name == "Player1")
+                {
+                    gm.LoseLife(1);
+                }
 
-            else if(other.gameObject.name == "Player2")
-            {
-                gm.LoseLife(2);
+                else if (other.gameObject.name == "Player2")
+                {
+                    gm.LoseLife(2);
+                }
             }
         }
     }

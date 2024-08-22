@@ -35,7 +35,11 @@ public class Player2Movement : MonoBehaviour
     //Reference to Player 2's Animator
     private Animator anim;
 
+    //Reference to AudioManager
+    private AudioManager audioManager;
 
+    //Reference to SFXSource
+    private AudioSource sfxSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,8 @@ public class Player2Movement : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAttackScript = GetComponentInChildren<Player2Attack>();
         anim = GetComponent<Animator>();
+        audioManager = GameObject.Find("AudioSources").GetComponent<AudioManager>();
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -113,6 +119,7 @@ public class Player2Movement : MonoBehaviour
             {
                 p2x = new Vector2(rb2DTwo.velocity.x, JumpPower);
                 rb2DTwo.velocity = p2x;
+                sfxSource.PlayOneShot(audioManager.playerJump);
             }
         }
         if (Input.GetKeyUp(KeyCode.I) && rb2DTwo.velocity.y > 0f)

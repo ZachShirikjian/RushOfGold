@@ -9,11 +9,19 @@ public class CoinBarrelCounter : MonoBehaviour
     public int coinAmount;
     private GameManager gm;
 
+    //Reference to AudioManager
+    private AudioManager audioManager;
+
+    //Reference to SFXSource
+    private AudioSource sfxSource;
+
     // Start is called before the first frame update
     void Start()
     {
         coinAmount = 0;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audioManager = GameObject.Find("AudioSources").GetComponent<AudioManager>();
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,13 +31,12 @@ public class CoinBarrelCounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
         //If Player 1's Moneybag touches this goal (if the GameObject is Moneybag) 
         if (collision.gameObject.CompareTag("Moneybag"))
         {
 
             //Set the P1CoinBarrel amount to the Number of Coins in Player 1's Moneybag
+            sfxSource.PlayOneShot(audioManager.barrelGoal);
             gm.p1CoinBarrel += collision.gameObject.GetComponent<Player1Moneybag>().numCoins;
             Destroy(collision.gameObject);
         }
@@ -39,6 +46,7 @@ public class CoinBarrelCounter : MonoBehaviour
         {
             // Read how many coins are in the moneybag and add that to the barrel's coin amount
             //Set the P2CoinBarrel amount to the Number of Coins in Player 2's Moneybag
+            sfxSource.PlayOneShot(audioManager.barrelGoal);
             gm.p2CoinBarrel += collision.gameObject.GetComponent<Player2Moneybag>().numCoins;
             Destroy(collision.gameObject);
 

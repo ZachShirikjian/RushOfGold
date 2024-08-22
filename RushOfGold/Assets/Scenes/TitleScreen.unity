@@ -1291,7 +1291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197881732450203849, guid: 106925c8b59a00a4c9b6e4446f9a0448, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4061114827289182899, guid: 106925c8b59a00a4c9b6e4446f9a0448, type: 3}
       propertyPath: m_Pivot.x
@@ -1422,6 +1422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1307451716129850767, guid: 183003c1b57d80c4ba41d54a6ba285b1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 048c63cdbf7546549b5dd365800d1bf4, type: 3}
     - target: {fileID: 2961425814334815020, guid: 183003c1b57d80c4ba41d54a6ba285b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

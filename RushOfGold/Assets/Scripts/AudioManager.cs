@@ -5,7 +5,15 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     //REFERENCES TO SFX USED IN OUR GAME//
+    public AudioClip countdownBEEP;
+    public AudioClip countdownGO;
+    public AudioClip timesUp;
+    public AudioClip koSFX;
+    public AudioClip playerJump;
+    public AudioClip playerPunch;
+    public AudioClip takingDamage;
     public AudioClip coinCollect;
+    public AudioClip barrelGoal;
     public AudioClip UIHover;
     public AudioClip UIClick;
 
